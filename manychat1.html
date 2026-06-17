@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manychat AI — Silvia Arakelyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO BANNER ─── */
+    .header {
+      background: #7B34CF !important;
+      transition: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .case-hero {
+      background: #7B34CF;
+      padding: 60px 0 64px;
+    }
+
+    .case-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .case-hero h1 {
+      font-size: 41px;
+      font-weight: 500;
+      line-height: 109%;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .case-hero-desc {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 160%;
+      color: rgba(255,255,255,0.85);
+      max-width: 680px;
+      letter-spacing: 0.01em;
+      margin-bottom: 98px;
+    }
+
+    .case-stats {
+      display: flex;
+      gap: 60px;
+    }
+
+    .case-stat-val {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    .case-stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .case-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 120px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ─── CONTENT ─── */
+    .case-content {
+      max-width: 720px;
+    }
+
+    .content-section {
+      margin-bottom: 64px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .content-text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.75);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .content-text strong {
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 48px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 16px 0;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.5;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #f2f2f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      margin: 32px 0;
+    }
+
+    /* ─── RIGHT SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 112px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      padding: 11px 0 11px 12px;
+      transition: color 150ms;
+      border-left: 1px solid transparent;
+    }
+
+    .toc a:hover { color: #0a0a0a; }
+
+    .toc a.active {
+      color: #0a0a0a;
+      border-left-color: rgba(0,0,0,0.1);
+    }
+
+    /* ─── BOTTOM NAV ─── */
+    .bottom-nav {
+      padding: 0 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bottom-nav-link {
+      height: 56px;
+      padding: 0 27px;
+      background: #111111;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .bottom-nav-link:hover { background: #c7c7c7; color: #111111; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <button class="btn" onclick="location.href='index.html'" style="color:#ffffff;">Silvia Arakelyan</button>
+    <nav class="header-nav">
+      <a href="src/cv.pdf" class="btn" target="_blank" rel="noopener" style="color:#ffffff;">CV</a>
+      <a href="https://www.linkedin.com/in/silvia-arakelyan87/" class="btn" target="_blank" rel="noopener" style="color:#ffffff;">LinkedIn</a>
+      <div class="avatar"><img src="src/avatar.png" alt="Silvia Arakelyan" /></div>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <div class="case-hero">
+    <div class="case-hero-inner">
+      <h1>Bringing automation to every Manychat user</h1>
+      <p class="case-hero-desc">Manychat's FlowBuilder is powerful — but it requires time and expertise that most new users don't have. I led the design of AI Assistant, a text-based feature that generates automations from a single prompt. Over two iterations, we reached a 36% conversion rate to publishing for new users.</p>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-val">36%</div>
+          <div class="case-stat-label">CR to publish</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">20%</div>
+          <div class="case-stat-label">Retention</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">1,300+</div>
+          <div class="case-stat-label">Alpha users</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT: content left, TOC right -->
+  <div class="case-layout">
+
+    <!-- CONTENT -->
+    <div class="case-content">
+
+      <div class="content-section" id="overview">
+        <h2 class="section-heading">Overview</h2>
+        <div class="meta-table">
+          <div class="meta-row">
+            <div class="meta-label">Company</div>
+            <div class="meta-value">Manychat</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Objective</div>
+            <div class="meta-value">Make automation accessible to new users who don't yet know Manychat's FlowBuilder</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Target Audience</div>
+            <div class="meta-value">New Manychat users, small business owners, creators</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Team</div>
+            <div class="meta-value">Product designer, PO, Engineering Team</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">My role</div>
+            <div class="meta-value">UX research, UX/UI, usability testing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section" id="problem">
+        <h2 class="section-heading">The Problem</h2>
+        <p class="content-text">FlowBuilder gives experienced users full control over automation logic — but that depth is a barrier for newcomers. Building even a simple flow requires understanding Manychat's structure, triggers, and message types.</p>
+        <p class="content-text">The business question: Could we make automation accessible to users who don't yet speak Manychat's language?</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="content-text" style="color:rgba(0,0,0,0.4); font-size:13px; margin-top:-16px;">The existing FlowBuilder — powerful, but complex.</p>
+      </div>
+
+      <div class="content-section" id="hypothesis">
+        <h2 class="section-heading">Hypothesis</h2>
+        <p class="content-text">We identified two distinct user segments with different value propositions:</p>
+        <p class="content-text"><strong>New users</strong><br>AI Assistant could remove the expertise barrier entirely, letting them build their first automation through a simple text prompt. Higher setup rate.</p>
+        <p class="content-text"><strong>Experienced users</strong><br>AI Assistant could save time on routine flows, reducing setup time for automations they already knew how to build. Faster time-to-publish.</p>
+        <p class="content-text">This distinction shaped how we prioritized features and measured success across both iterations.</p>
+      </div>
+
+      <div class="content-section" id="discovery">
+        <h2 class="section-heading">Discovery: understanding AI expectations</h2>
+        <p class="content-text">Before designing, I ran a qualitative research study to understand what users actually expected from an AI feature.</p>
+        <p class="content-text"><strong>Method</strong><br>Analyzed 60+ reviews from the Manychat Early Access Community on Facebook, identifying patterns across user segments.</p>
+        <p class="content-text"><strong>Key finding</strong><br>The majority of respondents were experienced users — agencies and educators — who didn't need simplification. Many were protective of their expertise. This told us the primary value of AI Assistant would be for new users, not the power users who were loudest in the community.</p>
+        <p class="content-text"><strong>What this changed</strong><br>We deprioritized advanced functionality for v1.0 and focused on making the first-time experience work.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="content-text" style="color:rgba(0,0,0,0.4); font-size:13px; margin-top:-16px;">Audience segments identified through review analysis.</p>
+      </div>
+
+      <div class="content-section" id="iteration-1">
+        <h2 class="section-heading">Iteration 1: Shipping fast to learn</h2>
+        <p class="content-text"><strong>Design approach</strong><br>The goal of v1.0 was to validate the core concept and gather real usage data, not to ship a polished product.</p>
+        <p class="content-text"><strong>User perspective</strong><br>The user writes a prompt describing their business context and use case. AI generates an automation flow.</p>
+        <p class="content-text"><strong>Technical perspective</strong><br>We send the user's prompt alongside a JSON description of FlowBuilder logic to the model, which returns a structured automation.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="content-text" style="color:rgba(0,0,0,0.4); font-size:13px; margin-top:-16px;">Prompt → Manychat context → AI → Generated flow.</p>
+        <p class="content-text"><strong>Alpha test — what the data showed</strong><br>We rolled out to 1,300+ users. After one month, funnel data revealed two major drop-off points:</p>
+        <p class="content-text">01 — Before writing a prompt.<br>02 — Before applying the generated flow.</p>
+        <p class="content-text">To understand why, I ran a qualitative study with 10 users — two segments: those who abandoned before writing, and those who successfully applied a flow. I recruited via Intercom, wrote the interview scripts, conducted sessions, and synthesized findings for stakeholders.</p>
+        <p class="content-text"><strong>Abandoned users</strong><br>Didn't know how to describe what they wanted. They lacked both Manychat context and prompting intuition.</p>
+        <p class="content-text"><strong>Successful users</strong><br>Found the output too basic. They wanted more control and more complex logic than v1.0 could deliver.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="content-text" style="color:rgba(0,0,0,0.4); font-size:13px; margin-top:-16px;">Interview synthesis: abandoned vs. successful users.</p>
+        <p class="content-text"><strong>What this told us</strong><br>The audience for AI Assistant is new users — confirmed. But v1.0 was asking them to do something they weren't equipped to do: write a good prompt from scratch.</p>
+      </div>
+
+      <div class="content-section" id="iteration-2">
+        <h2 class="section-heading">Iteration 2: Designing for the actual user</h2>
+        <p class="content-text"><strong>Design shift</strong><br>Instead of a free-text prompt, we moved to a guided 4-question flow. Users select predefined answers; AI maps their responses to a template and fills in the automation content.</p>
+        <p class="content-text"><strong>Why this works for new users</strong><br>Removes the blank-canvas anxiety. Users make choices instead of writing from scratch.</p>
+        <p class="content-text"><strong>Technical shift</strong><br>Instead of generating a flow from a free prompt, the model now selects the best-matching template from a predefined library based on user answers, then fills in the content.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="content-text" style="color:rgba(0,0,0,0.4); font-size:13px; margin-top:-16px;">Classification questions → matched template → filled flow.</p>
+      </div>
+
+      <div class="content-section" id="results">
+        <h2 class="section-heading">Results</h2>
+        <p class="content-text"><strong>36%</strong> — Conversion rate to publish. New users who started the flow and shipped an automation.</p>
+        <p class="content-text"><strong>20%</strong> — Retention. Users returning to AI Assistant after their first use.</p>
+        <p class="content-text">The 36% CR was a meaningful signal — over a third of new users who started the flow published an automation, compared to the complex manual path before.</p>
+        <p class="content-text">The 20% retention showed that AI Assistant was becoming a recurring tool, not just a novelty.</p>
+      </div>
+
+      <div class="content-section" id="takeaways">
+        <h2 class="section-heading">Takeaways</h2>
+        <p class="content-text">Two iterations gave us more than metrics — they gave us clarity. We confirmed that the real audience was new users, not power users. We learned that structured input outperforms open prompts for this segment. And we built a feedback loop — loyal early users, a prompt analysis dataset, and a backlog of validated features — that the next team could build on.</p>
+        <p class="content-text">If I were to continue this work, I'd focus on closing the gap between what users attempt to describe and what Manychat can actually build — better expectation-setting at the entry point would likely move both CR and retention significantly.</p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR TOC -->
+    <aside class="sidebar">
+      <div class="toc">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#problem">The Problem</a>
+        <a href="#hypothesis">Hypothesis</a>
+        <a href="#discovery">Discovery</a>
+        <a href="#iteration-1">Iteration 1</a>
+        <a href="#iteration-2">Iteration 2</a>
+        <a href="#results">Results</a>
+        <a href="#takeaways">Takeaways</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.case-hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom <= 0) {
+        header.style.background = '#ffffff';
+        header.querySelectorAll('.btn').forEach(b => b.style.color = '');
+      } else {
+        header.style.background = '#7B34CF';
+        header.querySelectorAll('.btn').forEach(b => b.style.color = '#ffffff');
+      }
+    }, { passive: true });
+
+    const sections = document.querySelectorAll('.content-section');
+    const tocLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      const threshold = window.innerHeight * 0.6;
+      let current = sections[0].id;
+      sections.forEach(s => {
+        if (s.getBoundingClientRect().top <= threshold) current = s.id;
+      });
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+  </script>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a href="index.html#manychat" class="bottom-nav-link">← All case studies</a>
+    <a href="#" class="bottom-nav-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </div>
+
+</body>
+</html>

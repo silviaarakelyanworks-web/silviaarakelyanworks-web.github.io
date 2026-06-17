@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plazius — Silvia Arakelyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO BANNER ─── */
+    .header {
+      background: #FF5101 !important;
+      transition: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .case-hero {
+      background: #FF5101;
+      padding: 60px 0 64px;
+    }
+
+    .case-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .case-hero h1 {
+      font-size: 41px;
+      font-weight: 500;
+      line-height: 109%;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .case-hero-desc {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 160%;
+      color: #0a0a0a;
+      max-width: 680px;
+      letter-spacing: 0.01em;
+      margin-bottom: 98px;
+    }
+
+    .case-stats {
+      display: flex;
+      gap: 60px;
+    }
+
+    .case-stat-val {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #0a0a0a;
+    }
+
+    .case-stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #0a0a0a;
+      margin-top: 6px;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .case-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 120px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ─── CONTENT ─── */
+    .case-content {
+      max-width: 720px;
+    }
+
+    .content-section {
+      margin-bottom: 64px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .content-text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.75);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .content-text strong {
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 48px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 16px 0;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.5;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #f2f2f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      margin: 32px 0;
+    }
+
+    /* ─── RIGHT SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 112px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      padding: 11px 0 11px 12px;
+      transition: color 150ms;
+      border-left: 1px solid transparent;
+    }
+
+    .toc a:hover { color: #0a0a0a; }
+
+    .toc-sub {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(0,0,0,0.3);
+      padding: 8px 0 8px 24px;
+    }
+
+    .toc a.toc-impl.active ~ .toc-sub {
+      color: #0a0a0a;
+    }
+    .toc a.active {
+      color: #0a0a0a;
+      border-left-color: rgba(0,0,0,0.1);
+    }
+
+    /* ─── BOTTOM NAV ─── */
+    .bottom-nav {
+      padding: 0 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bottom-nav-link {
+      height: 56px;
+      padding: 0 27px;
+      background: #111111;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .bottom-nav-link:hover { background: #c7c7c7; color: #111111; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <button class="btn" onclick="location.href='index.html'">Silvia Arakelyan</button>
+    <nav class="header-nav">
+      <a href="src/cv.pdf" class="btn" target="_blank" rel="noopener">CV</a>
+      <a href="https://www.linkedin.com/in/silvia-arakelyan87/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="avatar"><img src="src/avatar.png" alt="Silvia Arakelyan" /></div>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <div class="case-hero">
+    <div class="case-hero-inner">
+      <h1>Plazius — the world's first full-cycle restaurant checkout app</h1>
+      <p class="case-hero-desc">Plazius offers pre-ordering, bill preview, splitting & sharing, payment, loyalty programs, and e-tips. I redesigned core user flows, conducted competitor analysis and UX testing, which increased pre-orders from 424 to 7,130 within two months.</p>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-val">16×</div>
+          <div class="case-stat-label">Pre-orders growth</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">40%</div>
+          <div class="case-stat-label">User retention</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">5×</div>
+          <div class="case-stat-label">User base growth</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT: content left, TOC right -->
+  <div class="case-layout">
+
+    <!-- CONTENT -->
+    <div class="case-content">
+
+      <div class="content-section" id="overview">
+        <h2 class="section-heading">Overview</h2>
+        <div class="meta-table">
+          <div class="meta-row">
+            <div class="meta-label">Company</div>
+            <div class="meta-value">Plazius</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Objective</div>
+            <div class="meta-value">Enhance the usability of Plazius's core features prior to integration with the SberFood app</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Target Audience</div>
+            <div class="meta-value">Restaurant guests who pay and order via mobile</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Team</div>
+            <div class="meta-value">PO, Art director, Product designers, Engineering Team</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">My role</div>
+            <div class="meta-value">UX/UI, copywriting, CusDev</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section" id="problem">
+        <h2 class="section-heading">Problem</h2>
+        <p class="content-text">The current design of Plazius was outdated, and the team was prepared to implement new UX patterns to test them with a small audience before integrating the main Pre-order feature into the new application.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="prediction">
+        <h2 class="section-heading">Prediction</h2>
+        <p class="content-text"><strong>Hypothesis for pre-order feature:</strong> If we launch the pre-order function in coffee shops across the city, our users will save time, and coffee shops will relieve cashiers and expedite the order pickup process. Consequently, cafes will integrate our service for a commission.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="implementation">
+        <h2 class="section-heading">Implementation</h2>
+
+        <p class="content-text"><strong>Competitor analysis</strong></p>
+        <p class="content-text">I conducted competitor analysis to reuse mechanics that are already familiar to users.</p>
+        <div class="image-placeholder">Image placeholder</div>
+
+        <p class="content-text"><strong>Design</strong></p>
+        <p class="content-text">I created a design system for the updated Plazius and assisted developers in implementing these improvements.</p>
+        <div class="image-placeholder">Image placeholder</div>
+
+        <p class="content-text"><strong>Usability testing</strong></p>
+        <p class="content-text">The Pre-ordering section underwent testing not on prototypes, but on Plazius users, and we received valuable feedback from restaurants.</p>
+        <div class="image-placeholder">Image placeholder</div>
+
+        <p class="content-text"><strong>Design improvements</strong></p>
+        <p class="content-text">For the pre-order feature, added a description of how the service works, the option to package the order 'for dine-in', include comments, and specify a name for the cashier to expect during pickup.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="results">
+        <h2 class="section-heading">Results</h2>
+        <p class="content-text">Metrics dynamics one month after the launch of the Pre-order feature:</p>
+        <ul class="content-text" style="padding-left:20px;">
+          <li>The number of establishments offering pre-orders increased from 60 to 110</li>
+          <li>The number of users grew from 178 to 950</li>
+          <li>The number of pre-orders per month rose from 424 to 7,130</li>
+          <li>After the design changes, user retention increased to 40%</li>
+        </ul>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR TOC -->
+    <aside class="sidebar">
+      <div class="toc">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#prediction">Prediction</a>
+        <a href="#implementation" class="toc-impl">Implementation</a>
+        <span class="toc-sub">Competitor analysis</span>
+        <span class="toc-sub">Design</span>
+        <span class="toc-sub">Usability testing</span>
+        <span class="toc-sub">Design improvements</span>
+        <a href="#results">Results</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.case-hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      header.style.background = heroBottom <= 0 ? '#ffffff' : '#FF5101';
+    }, { passive: true });
+
+    const sections = document.querySelectorAll('.content-section');
+    const tocLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      const threshold = window.innerHeight * 0.6;
+      let current = sections[0].id;
+      sections.forEach(s => {
+        if (s.getBoundingClientRect().top <= threshold) current = s.id;
+      });
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+  </script>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a href="index.html#plazius" class="bottom-nav-link">← All case studies</a>
+    <a href="#" class="bottom-nav-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </div>
+
+</body>
+</html>

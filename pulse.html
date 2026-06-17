@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse — Silvia Arakelyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO BANNER ─── */
+    .header {
+      background: #0080FF !important;
+      transition: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .case-hero {
+      background: #0080FF;
+      padding: 60px 0 64px;
+    }
+
+    .case-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .case-hero h1 {
+      font-size: 41px;
+      font-weight: 500;
+      line-height: 109%;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .case-hero-desc {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 160%;
+      color: rgba(255,255,255,0.85);
+      max-width: 680px;
+      letter-spacing: 0.01em;
+      margin-bottom: 98px;
+    }
+
+    .case-stats {
+      display: flex;
+      gap: 60px;
+    }
+
+    .case-stat-val {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    .case-stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .case-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 120px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ─── CONTENT ─── */
+    .case-content {
+      max-width: 720px;
+    }
+
+    .content-section {
+      margin-bottom: 64px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .content-text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.75);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .content-text strong {
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 48px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 16px 0;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.5;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #f2f2f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      margin: 32px 0;
+    }
+
+    /* ─── RIGHT SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 112px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      padding: 11px 0 11px 12px;
+      transition: color 150ms;
+      border-left: 1px solid transparent;
+    }
+
+    .toc a:hover { color: #0a0a0a; }
+
+    .toc a.active {
+      color: #0a0a0a;
+      border-left-color: rgba(0,0,0,0.1);
+    }
+
+    /* ─── BOTTOM NAV ─── */
+    .bottom-nav {
+      padding: 0 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bottom-nav-link {
+      height: 56px;
+      padding: 0 27px;
+      background: #111111;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .bottom-nav-link:hover { background: #c7c7c7; color: #111111; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <button class="btn" onclick="location.href='index.html'" style="color:#ffffff;">Silvia Arakelyan</button>
+    <nav class="header-nav">
+      <a href="src/cv.pdf" class="btn" target="_blank" rel="noopener" style="color:#ffffff;">CV</a>
+      <a href="https://www.linkedin.com/in/silvia-arakelyan87/" class="btn" target="_blank" rel="noopener" style="color:#ffffff;">LinkedIn</a>
+      <div class="avatar"><img src="src/avatar.png" alt="Silvia Arakelyan" /></div>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <div class="case-hero">
+    <div class="case-hero-inner">
+      <h1>Pulse — helping analysts track the cryptocurrency market effectively</h1>
+      <p class="case-hero-desc">DataLight is a research and data analytics company providing unique insights on cryptomarkets using market data, traditional and social media sentiments, and comprehensive visualization tools. I designed the Pulse mobile app from scratch.</p>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-val">5+</div>
+          <div class="case-stat-label">Core screens</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">4.8</div>
+          <div class="case-stat-label">AppStore rating</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">B2C</div>
+          <div class="case-stat-label">Product type</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT: content left, TOC right -->
+  <div class="case-layout">
+
+    <!-- CONTENT -->
+    <div class="case-content">
+
+      <div class="content-section" id="overview">
+        <h2 class="section-heading">Overview</h2>
+        <div class="meta-table">
+          <div class="meta-row">
+            <div class="meta-label">Company</div>
+            <div class="meta-value">DataLight</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Objective</div>
+            <div class="meta-value">Design a mobile app for cryptocurrency market analysis with unique DataLight insights</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Target Audience</div>
+            <div class="meta-value">Crypto investors and analysts</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Team</div>
+            <div class="meta-value">Product designer, PO, Engineering Team</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">My role</div>
+            <div class="meta-value">UX/UI, design system</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section" id="summary">
+        <h2 class="section-heading">Summary screen</h2>
+        <p class="content-text">Delivers a concise overview of asset information, enabling users to make informed decisions at a glance.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="chart">
+        <h2 class="section-heading">Full chart view</h2>
+        <p class="content-text">Offers a robust analytical tool in a mobile-friendly format. Users gain access to a comprehensive range of asset metrics, including unique insights like Social Sentiment and On-chain Activity, powered by DataLight.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="analytics">
+        <h2 class="section-heading">Analytics</h2>
+        <p class="content-text">Provides key asset metrics in a consolidated format, streamlining the analysis process for better decision-making.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="portfolio">
+        <h2 class="section-heading">Portfolio</h2>
+        <p class="content-text">Allows users to compare portfolio performance against other assets and indices. Includes advanced metrics such as Beta trends and volatility indicators.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="alerts">
+        <h2 class="section-heading">Alerts</h2>
+        <p class="content-text">Features a highly customizable notification system. Users can stay informed not just about price fluctuations but also a wide array of metrics from DataLight, such as transactional activity surges, trading volumes, and social media mentions.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR TOC -->
+    <aside class="sidebar">
+      <div class="toc">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#summary">Summary screen</a>
+        <a href="#chart">Full chart view</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#alerts">Alerts</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.case-hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom <= 0) {
+        header.style.background = '#ffffff';
+        header.querySelectorAll('.btn').forEach(b => b.style.color = '');
+      } else {
+        header.style.background = '#0080FF';
+        header.querySelectorAll('.btn').forEach(b => b.style.color = '#ffffff');
+      }
+    }, { passive: true });
+
+    const sections = document.querySelectorAll('.content-section');
+    const tocLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      const threshold = window.innerHeight * 0.6;
+      let current = sections[0].id;
+      sections.forEach(s => {
+        if (s.getBoundingClientRect().top <= threshold) current = s.id;
+      });
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+  </script>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a href="index.html#pulse" class="bottom-nav-link">← All case studies</a>
+    <a href="#" class="bottom-nav-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </div>
+
+</body>
+</html>

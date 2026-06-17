@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SberFood — Silvia Arakelyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO BANNER ─── */
+    .header {
+      background: #D2E848 !important;
+      transition: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .case-hero {
+      background: #D2E848;
+      padding: 60px 0 64px;
+    }
+
+    .case-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .case-breadcrumb {
+      font-size: 14px;
+      font-weight: 500;
+      color: #0a0a0a;
+      letter-spacing: 0.01em;
+      margin-bottom: 82px;
+    }
+
+    .case-breadcrumb a {
+      color: #0a0a0a;
+      text-decoration: none;
+    }
+
+    .case-breadcrumb a:hover { color: #0a0a0a; }
+
+    .case-breadcrumb span { margin: 0 8px; }
+
+    .case-hero h1 {
+      font-size: 41px;
+      font-weight: 500;
+      line-height: 109%;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .case-hero-desc {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 160%;
+      color: #0a0a0a;
+      max-width: 680px;
+      letter-spacing: 0.01em;
+      margin-bottom: 98px;
+    }
+
+    .case-stats {
+      display: flex;
+      gap: 60px;
+    }
+
+    .case-stat-val {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #0a0a0a;
+    }
+
+    .case-stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #0a0a0a;
+      margin-top: 6px;
+    }
+
+    /* ─── HERO IMAGE ─── */
+    .case-hero-image {
+      width: 100%;
+      background: #FFE77D;
+      aspect-ratio: 21/8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.3);
+      text-transform: uppercase;
+    }
+
+    .case-hero-image img { width: 100%; display: block; }
+
+    /* ─── MAIN LAYOUT ─── */
+    .case-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 120px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ─── CONTENT ─── */
+    .case-content {
+      max-width: 720px;
+    }
+
+    .content-section {
+      margin-bottom: 64px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .content-text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.75);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .content-text strong {
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 48px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 16px 0;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.5;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #f2f2f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      margin: 32px 0;
+    }
+
+    /* ─── RIGHT SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 112px;
+    }
+
+    .back-link {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0a0a0a;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      margin-bottom: 40px;
+    }
+
+    .back-link:hover { opacity: 0.5; }
+
+    .toc a {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      padding: 11px 0 11px 12px;
+      transition: color 150ms;
+      border-left: 1px solid transparent;
+    }
+
+    .toc a:hover { color: #0a0a0a; }
+
+    .toc-sub {
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(0,0,0,0.3);
+      padding: 8px 0 8px 24px;
+    }
+
+    .toc a.toc-impl.active ~ .toc-sub {
+      color: #0a0a0a;
+    }
+    .toc a.active {
+      color: #0a0a0a;
+      border-left-color: rgba(0,0,0,0.1);
+    }
+
+    /* ─── BOTTOM NAV ─── */
+    .bottom-nav {
+      padding: 0 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bottom-nav-link {
+      height: 56px;
+      padding: 0 27px;
+      background: #111111;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .bottom-nav-link:hover { background: #c7c7c7; color: #111111; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <button class="btn" onclick="location.href='index.html'">Silvia Arakelyan</button>
+    <nav class="header-nav">
+      <a href="src/cv.pdf" class="btn" target="_blank" rel="noopener">CV</a>
+      <a href="https://www.linkedin.com/in/silvia-arakelyan87/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="avatar"><img src="src/avatar.png" alt="Silvia Arakelyan" /></div>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <div class="case-hero">
+    <div class="case-hero-inner">
+      <h1>SberFood — merging two products into one restaurant app</h1>
+      <p class="case-hero-desc">SberFood is a platform for discovering restaurants, booking tables, ordering food, and making cashless payments. Designed in a team of two product designers under an art director, the app concept merged two underperforming Sberbank services into one product, reaching 1M MAU and $2M in annual revenue.</p>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-val">1M</div>
+          <div class="case-stat-label">MAU</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">$2M</div>
+          <div class="case-stat-label">Annual revenue</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">4.9</div>
+          <div class="case-stat-label">AppStore rating</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT: content left, TOC right -->
+  <div class="case-layout">
+
+    <!-- CONTENT -->
+    <div class="case-content">
+
+      <div class="content-section" id="overview">
+        <h2 class="section-heading">Overview</h2>
+        <div class="meta-table">
+          <div class="meta-row">
+            <div class="meta-label">Company</div>
+            <div class="meta-value">SberFood</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Objective</div>
+            <div class="meta-value">Launch a new mobile application combining the functionality of Afisha-Restaurants and Plazius</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Target Audience</div>
+            <div class="meta-value">Citizens who actively visit restaurants</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Team</div>
+            <div class="meta-value">Art director, 2 Product designers, PO, Engineering Team</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">My role</div>
+            <div class="meta-value">Design Sprint, CJM, UX/UI, copywriting, usability testing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section" id="problem">
+        <h2 class="section-heading">Problem</h2>
+        <p class="content-text">Sberbank's portfolio included two apps aimed at the same audience, each covering half of the guest journey:</p>
+        <p class="content-text"><strong>Afisha Restaurants</strong> owned discovery — a restaurant database, reviews, and reservations — built on the magazine's legacy audience, but monetized only through advertising.</p>
+        <p class="content-text"><strong>Plazius</strong> owned the on-site experience — pre-order, bill splitting, e-tips, loyalty — but had limited reach in both restaurants and users.</p>
+        <p class="content-text">Neither product alone covered the full guest journey, and neither could monetize beyond its narrow slice of it.</p>
+        <img src="src/4. Sber/1.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+      </div>
+
+      <div class="content-section" id="prediction">
+        <h2 class="section-heading">Prediction</h2>
+        <p class="content-text">If one app combined Afisha's discovery strength with Plazius's transactional features, it could give Plazius distribution through Afisha's audience and locations, while giving Afisha a path to transaction-based revenue instead of advertising alone.</p>
+        <img src="src/4. Sber/2.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+      </div>
+
+      <div class="content-section" id="implementation">
+        <h2 class="section-heading">Implementation</h2>
+
+        <p class="content-text"><strong>Design Sprint</strong></p>
+        <p class="content-text">The art director facilitated a Google Design Sprint. We split the work by functional area: I focused on the in-restaurant experience (pre-order, payments, loyalty), my colleague on discovery scenarios (search, reviews, booking). We each defined personas and user stories for our area, then cross-reviewed each other's work before mapping both into a single CJM. This surfaced where the two journeys should connect and produced the initial backlog and key screen drafts.</p>
+        <img src="src/4. Sber/3.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+        <p class="content-text">The Afisha CJM exposed where the journey broke down after booking: no taxi or route integration to get the user to the restaurant, and no contact with the user after the visit — no promotions, no easy way to leave a review. These gaps mapped directly onto what Plazius already solved on-site, confirming where the two products needed to connect.</p>
+        <p class="content-text"><strong>First design</strong></p>
+        <p class="content-text">After stakeholder alignment, the design team built out the first full UI and a design system to give the merged product its own visual identity, distinct from both legacy apps.</p>
+        <img src="src/4. Sber/5.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+
+        <p class="content-text"><strong>Usability testing</strong></p>
+        <p class="content-text">We ran 15+ interviews, 10+ hallway tests in cafes and food courts, and surveys across 10+ prototypes per use case. Six findings shaped the next design iteration:</p>
+        <img src="src/4. Sber/6.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+
+        <p class="content-text"><strong>Refining the UX</strong></p>
+        <p class="content-text">Each fix mapped directly to a finding above:</p>
+        <ul class="content-text" style="padding-left:20px;">
+          <li>Moved service buttons from the quick-access button to the feed's top bar — fixing the false-action confusion.</li>
+          <li>Created a separate tab for promotions — fixing discoverability.</li>
+          <li>Reduced venue card size and added booking times — fixing the scroll-discovery issue.</li>
+          <li>Modified the navigation panel for faster access to saved venues.</li>
+        </ul>
+        <img src="src/4. Sber/8.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+      </div>
+
+      <div class="content-section" id="results">
+        <h2 class="section-heading">Results</h2>
+        <p class="content-text">These changes shipped in the public release. SberFood launched on the AppStore with 39.6K+ ratings and a 4.9 average, going on to reach 1M MAU and $2M in annual revenue.</p>
+        <img src="src/4. Sber/9.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR TOC -->
+    <aside class="sidebar">
+      <div class="toc">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#prediction">Prediction</a>
+        <a href="#implementation" class="toc-impl">Implementation</a>
+        <span class="toc-sub">Design Sprint</span>
+        <span class="toc-sub">First design</span>
+        <span class="toc-sub">Usability testing</span>
+        <span class="toc-sub">Refining the UX</span>
+        <a href="#results">Results</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.case-hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      header.style.background = heroBottom <= 0 ? '#ffffff' : '#D2E848';
+    }, { passive: true });
+
+    const sections = document.querySelectorAll('.content-section');
+    const tocLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      const threshold = window.innerHeight * 0.6;
+      let current = sections[0].id;
+      sections.forEach(s => {
+        if (s.getBoundingClientRect().top <= threshold) current = s.id;
+      });
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+  </script>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a href="index.html#sberfood" class="bottom-nav-link">← All case studies</a>
+    <a href="#" class="bottom-nav-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </div>
+
+</body>
+</html>

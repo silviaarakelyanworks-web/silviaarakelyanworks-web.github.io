@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manychat Creators — Silvia Arakelyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO BANNER ─── */
+    .header {
+      background: #027D2E !important;
+      transition: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .case-hero {
+      background: #027D2E;
+      padding: 60px 0 64px;
+    }
+
+    .case-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .case-hero h1 {
+      font-size: 41px;
+      font-weight: 500;
+      line-height: 109%;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .case-hero-desc {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 160%;
+      color: rgba(255,255,255,0.85);
+      max-width: 680px;
+      letter-spacing: 0.01em;
+      margin-bottom: 98px;
+    }
+
+    .case-stats {
+      display: flex;
+      gap: 60px;
+    }
+
+    .case-stat-val {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+    }
+
+    .case-stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-top: 6px;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .case-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 120px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ─── CONTENT ─── */
+    .case-content {
+      max-width: 720px;
+    }
+
+    .content-section {
+      margin-bottom: 64px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .content-text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.75);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .content-text strong {
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 48px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 16px 0;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.5;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #f2f2f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      margin: 32px 0;
+    }
+
+    .image-caption {
+      font-size: 13px;
+      color: rgba(0,0,0,0.4);
+      margin-top: -16px;
+      margin-bottom: 32px;
+    }
+
+    /* ─── RIGHT SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 112px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      padding: 11px 0 11px 12px;
+      transition: color 150ms;
+      border-left: 1px solid transparent;
+    }
+
+    .toc a:hover { color: #0a0a0a; }
+
+    .toc a.active {
+      color: #0a0a0a;
+      border-left-color: rgba(0,0,0,0.1);
+    }
+
+    /* ─── BOTTOM NAV ─── */
+    .bottom-nav {
+      padding: 0 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bottom-nav-link {
+      height: 56px;
+      padding: 0 27px;
+      background: #111111;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .bottom-nav-link:hover { background: #c7c7c7; color: #111111; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <button class="btn" onclick="location.href='index.html'" style="color:#ffffff;">Silvia Arakelyan</button>
+    <nav class="header-nav">
+      <a href="src/cv.pdf" class="btn" target="_blank" rel="noopener" style="color:#ffffff;">CV</a>
+      <a href="https://www.linkedin.com/in/silvia-arakelyan87/" class="btn" target="_blank" rel="noopener" style="color:#ffffff;">LinkedIn</a>
+      <div class="avatar"><img src="src/avatar.png" alt="Silvia Arakelyan" /></div>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <div class="case-hero">
+    <div class="case-hero-inner">
+      <h1>Helping IG Creators set up their first automation — and actually stick around</h1>
+      <p class="case-hero-desc">For Manychat, Creator activation is a core revenue driver. But new Creators were dropping off before setting up a single automation. I led the design of a Home Tab experiment that personalised the experience for Creators' most common use case.</p>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-val">+21%</div>
+          <div class="case-stat-label">Automation setup rate</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">+15%</div>
+          <div class="case-stat-label">User activation</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">72%</div>
+          <div class="case-stat-label">Creators on one use case</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT: content left, TOC right -->
+  <div class="case-layout">
+
+    <!-- CONTENT -->
+    <div class="case-content">
+
+      <div class="content-section" id="overview">
+        <h2 class="section-heading">Overview</h2>
+        <div class="meta-table">
+          <div class="meta-row">
+            <div class="meta-label">Company</div>
+            <div class="meta-value">Manychat</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Objective</div>
+            <div class="meta-value">Increase Creator activation by reducing friction in the first automation setup</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Target Audience</div>
+            <div class="meta-value">Instagram Creators — new Manychat users</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Team</div>
+            <div class="meta-value">Product designer, PO, Engineering Team</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">My role</div>
+            <div class="meta-value">UX research, UX/UI, A/B experiment design</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section" id="problem">
+        <h2 class="section-heading">The Problem</h2>
+        <p class="content-text">Activation is Manychat's north star for new users — an account is considered activated once a user reaches their first meaningful value moment: setting up automation and collecting real contacts.</p>
+        <p class="content-text">For Creators, this wasn't happening at the rate it should.</p>
+        <p class="content-text"><strong>Template Questionnaire CR was low</strong><br>The onboarding questionnaire was static and generic — it didn't speak to how Creators actually use Manychat, so most ignored it or dropped off.</p>
+        <p class="content-text"><strong>Trigger setup CR was low</strong><br>Even Creators who reached the FlowBuilder struggled to configure their first trigger. The setup flow had too many steps, unclear options, and no guidance toward the most effective path.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="image-caption">Home Tab + FlowBuilder trigger — annotated drop-off points.</p>
+      </div>
+
+      <div class="content-section" id="insight">
+        <h2 class="section-heading">The insight that shaped everything</h2>
+        <p class="content-text">Before jumping to solutions, I looked at what Creators were actually doing inside Manychat.</p>
+        <p class="content-text"><strong>Key behaviour</strong><br>72% of Creators used one-node automation with a Comment Reply Trigger.</p>
+        <p class="content-text">The use case was almost always the same: ask viewers to comment on a post with a keyword → send a DM with a discount link → convert them into subscribers or buyers.</p>
+        <p class="content-text">This wasn't a niche behaviour — it was the dominant pattern. And a recent Meta API update made it possible to access users' actual posts, comments, and account statistics directly.</p>
+        <p class="content-text">Instead of designing for every possible Creator use case, we designed for the one that actually drives growth.</p>
+      </div>
+
+      <div class="content-section" id="hypotheses">
+        <h2 class="section-heading">Three hypotheses, three tasks</h2>
+        <p class="content-text">Based on the insight, I formulated three parallel hypotheses — each became an independent design task to allow separate testing and prioritisation.</p>
+        <p class="content-text"><strong>Task 1 — Personalised IG Feed on Home Tab</strong><br>If we show Creators their own posts with automation prompts surfaced inline, they'll engage more readily with the setup flow.</p>
+        <p class="content-text"><strong>Task 2 — Simplified Comment Reply Trigger</strong><br>If we reduce friction in the most popular trigger setup, more Creators will successfully complete their first automation.</p>
+        <p class="content-text"><strong>Task 3 — Guided Onboarding with Template</strong><br>If we route new Creators directly into the most popular use case via a structured onboarding, we'll increase both template installation and FlowBuilder entry rate.</p>
+        <p class="content-text">Tasks 1 and 3 were scoped and shipped as lighter experiments. Task 2 had the most unknowns and required dedicated research — it became the deepest design investment.</p>
+      </div>
+
+      <div class="content-section" id="task1">
+        <h2 class="section-heading">Task 1: Personalised IG Feed on Home Tab</h2>
+        <p class="content-text"><strong>Approach</strong><br>I started by mapping the Creator's journey outside Manychat — what tools do they use, what interfaces are familiar, what mental model do they bring.</p>
+        <p class="content-text">I analysed 5+ SMM platforms to identify patterns in post-and-analytics interfaces. The goal was to make the personalised feed feel native to how Creators already work, not like a new product to learn.</p>
+        <p class="content-text"><strong>Design decision</strong><br>The entry point is a banner surfaced on the Home Tab, tied to the Creator's most recent post. It highlights unanswered comments and offers a one-click path to set up an automated reply.</p>
+        <p class="content-text">The design pattern was intentionally borrowed from analytics tools Creators already use — reducing cognitive load and making the value proposition immediately legible.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="image-caption">Home Tab with personalised feed.</p>
+      </div>
+
+      <div class="content-section" id="task2">
+        <h2 class="section-heading">Task 2: Simplifying the Comment Reply Trigger</h2>
+        <p class="content-text">This was the highest-risk task — and the one with the most direct impact on Automation Setup Rate.</p>
+        <p class="content-text"><strong>15+ Creator interviews</strong><br>Reviewed existing recordings, focused on newcomers. Key pattern: users didn't know which post or keyword option to choose, and abandoned when faced with too many decisions at once.</p>
+        <p class="content-text"><strong>Usage data analysis</strong><br>Mapped drop-offs across every step of the trigger setup. The steepest drop was at post selection and keyword creation.</p>
+        <p class="content-text"><strong>Customer Manager interviews</strong><br>Surfaced the most common guidance they give Creators manually. This became a direct input to copy decisions in the new flow.</p>
+        <p class="content-text"><strong>Step 1 — Post selection</strong><br>The new screen shows the Creator's actual recent posts upfront. The "Specific Post" option is visually emphasised because data confirmed it's both the most popular and the most effective path for new users.</p>
+        <p class="content-text"><strong>Step 2 — Keyword creation</strong><br>The new flow surfaces keyword creation immediately after post selection. "Specific Keywords" is highlighted as the recommended option — framed as a question rather than a label, which reduced hesitation in user testing.</p>
+        <p class="content-text"><strong>Step 3 — Public auto-response</strong><br>The new design defaults to three response variants with placeholder copy — protecting the Creator's account from Instagram's repetitive-reply filters without requiring them to understand the underlying constraint.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="image-caption">Before / After — trigger setup flow.</p>
+      </div>
+
+      <div class="content-section" id="task3">
+        <h2 class="section-heading">Task 3: Guided onboarding</h2>
+        <p class="content-text">The onboarding flow was redesigned to route new Creators directly into the Comment Reply use case — bypassing the generic questionnaire and installing a pre-built template as the starting point.</p>
+        <p class="content-text">This reduced the number of decisions required before a Creator had a working automation, and increased FlowBuilder entry rate by shortening the path from sign-up to first setup moment.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="image-caption">Guided onboarding flow.</p>
+      </div>
+
+      <div class="content-section" id="results">
+        <h2 class="section-heading">Results</h2>
+        <p class="content-text"><strong>+21%</strong> — Automation Setup Rate (A/B vs control). Direct lift attributable to the redesigned Home Tab experiment.</p>
+        <p class="content-text"><strong>+15%</strong> — User activation (overall). Reaching the first value moment within Month 1.</p>
+        <p class="content-text">The A/B test ran against the previous Home Tab as control. Qualitative interviews confirmed what the numbers suggested: Creators completed trigger setup faster and with less confusion. Several newcomers described the keyword step as the first time the product felt "obvious."</p>
+      </div>
+
+      <div class="content-section" id="takeaways">
+        <h2 class="section-heading">Takeaways</h2>
+        <p class="content-text">This experiment worked because it started from a single, specific behavioural insight rather than a broad brief. Designing for 72% of users instead of 100% made every decision easier to justify and every trade-off easier to make.</p>
+        <p class="content-text">The main thing I'd do differently: involve Support earlier. Their knowledge of which options cause account issues was critical — but it came late in the process. Building that input into the research phase from the start would have saved a design iteration.</p>
+        <p class="content-text">The natural next step is adapting this experience for advanced Creators — users who've already set up their first automation and need more transparency into performance metrics. The personalised feed is already the right surface; it just needs a second layer of depth.</p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR TOC -->
+    <aside class="sidebar">
+      <div class="toc">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#problem">The Problem</a>
+        <a href="#insight">The Insight</a>
+        <a href="#hypotheses">Three Hypotheses</a>
+        <a href="#task1">Task 1 — Personalised Feed</a>
+        <a href="#task2">Task 2 — Trigger Setup</a>
+        <a href="#task3">Task 3 — Onboarding</a>
+        <a href="#results">Results</a>
+        <a href="#takeaways">Takeaways</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.case-hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom <= 0) {
+        header.style.background = '#ffffff';
+        header.querySelectorAll('.btn').forEach(b => b.style.color = '');
+      } else {
+        header.style.background = '#027D2E';
+        header.querySelectorAll('.btn').forEach(b => b.style.color = '#ffffff');
+      }
+    }, { passive: true });
+
+    const sections = document.querySelectorAll('.content-section');
+    const tocLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      const threshold = window.innerHeight * 0.6;
+      let current = sections[0].id;
+      sections.forEach(s => {
+        if (s.getBoundingClientRect().top <= threshold) current = s.id;
+      });
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+  </script>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a href="index.html#manychat" class="bottom-nav-link">← All case studies</a>
+    <a href="#" class="bottom-nav-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </div>
+
+</body>
+</html>

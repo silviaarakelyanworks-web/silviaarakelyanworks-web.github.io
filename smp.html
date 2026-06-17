@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMP — Silvia Arakelyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a0a0a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO BANNER ─── */
+    .header {
+      background: #EE5A2E !important;
+      transition: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .case-hero {
+      background: #EE5A2E;
+      padding: 60px 0 64px;
+    }
+
+    .case-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .case-hero h1 {
+      font-size: 41px;
+      font-weight: 500;
+      line-height: 109%;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .case-hero-desc {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 160%;
+      color: #0a0a0a;
+      max-width: 680px;
+      letter-spacing: 0.01em;
+      margin-bottom: 98px;
+    }
+
+    .case-stats {
+      display: flex;
+      gap: 60px;
+    }
+
+    .case-stat-val {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #0a0a0a;
+    }
+
+    .case-stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #0a0a0a;
+      margin-top: 6px;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .case-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px 120px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ─── CONTENT ─── */
+    .case-content {
+      max-width: 720px;
+    }
+
+    .content-section {
+      margin-bottom: 64px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .content-text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(0,0,0,0.75);
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .content-text strong {
+      font-weight: 600;
+      color: #0a0a0a;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 48px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 16px 0;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .meta-value {
+      font-size: 15px;
+      font-weight: 400;
+      color: #0a0a0a;
+      line-height: 1.5;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #f2f2f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      margin: 32px 0;
+    }
+
+    /* ─── RIGHT SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 112px;
+    }
+
+    .toc a {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      text-decoration: none;
+      padding: 11px 0 11px 12px;
+      transition: color 150ms;
+      border-left: 1px solid transparent;
+    }
+
+    .toc a:hover { color: #0a0a0a; }
+
+    .toc a.active {
+      color: #0a0a0a;
+      border-left-color: rgba(0,0,0,0.1);
+    }
+
+    /* ─── BOTTOM NAV ─── */
+    .bottom-nav {
+      padding: 0 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bottom-nav-link {
+      height: 56px;
+      padding: 0 27px;
+      background: #111111;
+      color: #ffffff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .bottom-nav-link:hover { background: #c7c7c7; color: #111111; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <button class="btn" onclick="location.href='index.html'">Silvia Arakelyan</button>
+    <nav class="header-nav">
+      <a href="src/cv.pdf" class="btn" target="_blank" rel="noopener">CV</a>
+      <a href="https://www.linkedin.com/in/silvia-arakelyan87/" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="avatar"><img src="src/avatar.png" alt="Silvia Arakelyan" /></div>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER -->
+  <div class="case-hero">
+    <div class="case-hero-inner">
+      <h1>Reducing checkout drop-off by fixing the address form nobody could complete</h1>
+      <p class="case-hero-desc">The checkout-to-purchase rate was sitting at 83–87% — seemingly healthy, but hiding a specific, fixable problem: users were abandoning right at the address form. I led the UX research and redesign, projecting +5% conversion and ~$700/day in additional revenue.</p>
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-val">+5%</div>
+          <div class="case-stat-label">Projected conversion</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">~$700</div>
+          <div class="case-stat-label">Revenue / day</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-val">$0.47</div>
+          <div class="case-stat-label">Projected ARPU</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT: content left, TOC right -->
+  <div class="case-layout">
+
+    <!-- CONTENT -->
+    <div class="case-content">
+
+      <div class="content-section" id="overview">
+        <h2 class="section-heading">Overview</h2>
+        <div class="meta-table">
+          <div class="meta-row">
+            <div class="meta-label">Company</div>
+            <div class="meta-value">Sheet Music Plus (Muse Group)</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Objective</div>
+            <div class="meta-value">Reduce checkout abandonment at the address form step</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Target Audience</div>
+            <div class="meta-value">Musicians purchasing sheet music globally</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">Team</div>
+            <div class="meta-value">Product designer, PO, Engineering Team</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label">My role</div>
+            <div class="meta-value">UX research, UX/UI, experiment design</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section" id="problem">
+        <h2 class="section-heading">The Problem</h2>
+        <p class="content-text">Sheet Music Plus's checkout conversion was 83–87% — good by industry standards, but our data suggested hidden friction. Users were reaching the checkout page and not making it to payment.</p>
+        <p class="content-text">The business question was simple: why are users who clearly intend to buy failing to complete the address step?</p>
+        <p class="content-text">Two compounding issues were known going in:</p>
+        <p class="content-text"><strong>UX friction in the address form</strong><br>Unclear required vs. optional fields, no inline validation, and generic server errors that gave users no actionable guidance.</p>
+        <p class="content-text"><strong>Technical blockers</strong><br>Users switching between EU and non-EU warehouses got stuck in infinite loading states. Saved non-EU addresses broke checkout for EU-located users entirely.</p>
+        <p class="content-text">Both were silently costing conversions without appearing in headline metrics.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="research">
+        <h2 class="section-heading">Research: Finding where users actually stopped</h2>
+        <p class="content-text">Before designing anything, I ran a structured data study to answer five specific questions about where and why users were dropping off.</p>
+
+        <p class="content-text"><strong>Finding 1 — Users start the form, but don't finish it</strong><br>Over 93% of users with a blank form start filling it. But only 72% of those who begin the Full Address form actually reach the payment page — compared to 92% for the Country-only flow. That's a 20-point gap created entirely by form complexity.</p>
+
+        <p class="content-text"><strong>Finding 2 — The disabled Continue button was a major confusion signal</strong><br>In the Full Address flow without prefill, 52% of users hovered over the disabled Continue button and 36% clicked it — the highest confusion signal across all segments.</p>
+
+        <p class="content-text"><strong>Finding 3 — Phone was the most-missed field in EU; ZIP in non-EU</strong><br>For EU users, phone was missing in 33% of cases — but 73% still recovered and proceeded, suggesting the requirement wasn't communicated clearly rather than users refusing to provide it.</p>
+
+        <p class="content-text"><strong>Finding 4 — Errors were generic and unhelpful</strong><br>The most impactful error was a bare {"name":"Not Found","code":404} — 77% of users who encountered it did not proceed. Neither error gave users any indication of what to do next.</p>
+
+        <p class="content-text"><strong>Finding 5 — Delivery choice architecture affected conversion more than price</strong><br>Conversion peaked at 83.8% with exactly 2 delivery options, dropped to 79.9% with 1 option, and fell again to 81.9% with 3+.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="solution">
+        <h2 class="section-heading">The Solution</h2>
+        <p class="content-text">The redesign addressed three layers of friction simultaneously.</p>
+
+        <p class="content-text"><strong>Layer 1 — Reduce required fields to the legal minimum by region</strong><br>After mapping legal requirements for digital vs. physical products across EU, US, and rest-of-world, we stripped each form to its true minimum. For US digital purchases: country and ZIP only. For EU digital: country, name, postal code.</p>
+
+        <p class="content-text"><strong>Layer 2 — Fix validation feedback at every point of confusion</strong><br>Every field now validates inline on blur, not on submission. Required fields are clearly marked. The Continue button, when disabled, shows a tooltip explaining exactly what's missing. Errors were rewritten from internal server codes to human-readable messages with clear recovery actions.</p>
+
+        <p class="content-text"><strong>Layer 3 — Restructure the page layout to reduce cognitive load</strong><br>CTA buttons moved to the top of the page. Order summary moved below the CTA. Delivery options positioned under the address block — visible only after the address is complete. Address autocomplete (Google Places API) was added to reduce manual input errors.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="experiment">
+        <h2 class="section-heading">Experiment Design</h2>
+        <p class="content-text">The change was shipped as an A/B test with two primary metrics:</p>
+        <p class="content-text"><strong>Primary — Checkout → Payment</strong><br>Baseline 83.85%, MDE 5%. Sample 1,079, duration ~3 days.</p>
+        <p class="content-text"><strong>Secondary — ARPU</strong><br>Baseline $0.44, MDE 10%. Sample 114,000, duration ~7 days.</p>
+        <p class="content-text">The checkout → payment metric required only 3 days to reach significance — meaning we could make a fast decision without waiting for a full revenue signal.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="results">
+        <h2 class="section-heading">Results</h2>
+        <p class="content-text">The experiment launched June 8, 2026. Results are pending — final analysis scheduled June 15.</p>
+        <p class="content-text"><strong>+5%</strong> — Projected checkout → payment conversion. Based on the pre-experiment model.</p>
+        <p class="content-text"><strong>+$700</strong> — Projected daily revenue. ARPU projected to increase from $0.44 to $0.47.</p>
+        <p class="content-text">The pre-experiment data gave strong confidence in the direction: the problems were measurable, the solutions mapped directly to identified failure modes, and the non-EU validation bug fix alone was expected to recover a meaningful segment that was being blocked despite completing the form correctly.</p>
+        <div class="image-placeholder">Image placeholder</div>
+      </div>
+
+      <div class="content-section" id="takeaways">
+        <h2 class="section-heading">Takeaways</h2>
+        <p class="content-text">This project was as much a data investigation as a design project. The headline conversion number looked acceptable — it took a structured breakdown of the funnel by form type, prefill state, and error type to find where real money was being lost.</p>
+        <p class="content-text">The most surprising finding: prefilling the address form barely improved conversion (81.3% vs 74.4% for Full Address). Users weren't dropping because of effort alone — they were dropping because they didn't understand what the form wanted from them. That distinction changed the design direction from "reduce fields" to "clarify requirements at every step."</p>
+        <p class="content-text">The next priority would be the 3DS authentication failure for EU users whose banks don't support it — a 57% churn rate on a recoverable error that currently has no user-facing guidance at all.</p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR TOC -->
+    <aside class="sidebar">
+      <div class="toc">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#problem">The Problem</a>
+        <a href="#research">Research</a>
+        <a href="#solution">The Solution</a>
+        <a href="#experiment">Experiment Design</a>
+        <a href="#results">Results</a>
+        <a href="#takeaways">Takeaways</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.case-hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      header.style.background = heroBottom <= 0 ? '#ffffff' : '#EE5A2E';
+    }, { passive: true });
+
+    const sections = document.querySelectorAll('.content-section');
+    const tocLinks = document.querySelectorAll('.toc a');
+
+    window.addEventListener('scroll', () => {
+      const threshold = window.innerHeight * 0.6;
+      let current = sections[0].id;
+      sections.forEach(s => {
+        if (s.getBoundingClientRect().top <= threshold) current = s.id;
+      });
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }, { passive: true });
+  </script>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+    <a href="index.html#smp" class="bottom-nav-link">← All case studies</a>
+    <a href="#" class="bottom-nav-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+  </div>
+
+</body>
+</html>
