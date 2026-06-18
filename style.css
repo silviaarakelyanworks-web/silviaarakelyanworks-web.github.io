@@ -18,6 +18,9 @@ body {
   align-items: center;
   justify-content: space-between;
   background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .btn:hover {
@@ -579,4 +582,265 @@ body {
 .s3-green-mockup-video {
   width: 100%;
   display: block;
+}
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+
+  /* Header */
+  .header {
+    height: 60px;
+    padding: 0;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  .header > .btn:first-child {
+    border-radius: 0 100px 100px 0;
+  }
+
+  .btn {
+    height: 44px;
+    font-size: 18px;
+    padding: 0 18px;
+  }
+
+  .header-nav {
+    gap: 0;
+  }
+
+  .header-nav .avatar {
+    margin-left: 0;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Hero */
+  .hero {
+    height: calc(100vh - 60px);
+    padding: 32px 0;
+    align-items: stretch;
+  }
+
+  .hero-blocks {
+    flex-direction: column;
+    height: 100%;
+    gap: 4px;
+  }
+
+  .hero-block--dark {
+    border-radius: 0 20px 20px 0;
+    padding-bottom: 28px;
+  }
+
+  .hero-block--blue {
+    border-radius: 20px 0 0 20px;
+    flex: 1;
+  }
+
+  .hero-text {
+    font-size: 24px;
+    width: 100%;
+    padding: 20px 20px 0;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    width: 100%;
+    padding: 14px 20px 0;
+  }
+
+  .tag {
+    font-size: 15px;
+  }
+
+  .hero-blue-text {
+    font-size: 15px;
+    padding: 0 0 20px 20px;
+  }
+
+  .hero-flower {
+    width: 60px;
+    padding: 16px 0 0 20px;
+  }
+
+  /* Section 2 */
+  .section-2 {
+    margin-top: 24px;
+    padding: 16px 0 40px;
+  }
+
+  .section-2-blocks {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .s2-block--orange {
+    grid-column: span 1;
+    height: auto;
+    border-radius: 0 20px 20px 0;
+    padding: 20px 20px 24px;
+    order: 2;
+  }
+
+  .s2-block--dark {
+    grid-column: span 1;
+    height: auto;
+    border-radius: 20px 0 0 20px;
+    padding: 20px 20px 24px;
+    order: 1;
+  }
+
+  .s2-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .s2-desc {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .s2-dark-title {
+    font-size: 26px;
+  }
+
+  .s2-dark-desc {
+    font-size: 15px;
+  }
+
+  .s2-showcase {
+    padding: 32px 20px;
+  }
+
+  .s2-stats {
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 32px;
+  }
+
+  .s2-stat-val {
+    font-size: 28px;
+  }
+
+  .s2-stat-label {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Section 3 */
+  .section-3 {
+    margin-top: 24px;
+    padding: 16px 0 40px;
+  }
+
+  .s3-row1 {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .s3-dark {
+    height: auto;
+    border-radius: 0 20px 20px 0;
+    padding: 20px 20px 24px;
+  }
+
+  .s3-dark-title {
+    font-size: 26px;
+  }
+
+  .s3-dark-desc {
+    font-size: 15px;
+  }
+
+  .s3-purple {
+    height: auto;
+    border-radius: 20px 0 0 20px;
+    padding: 20px 20px 24px;
+  }
+
+  .s3-purple-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .s3-purple-desc {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .s3-showcase {
+    padding: 32px 20px;
+  }
+
+  .s3-stats {
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 32px;
+  }
+
+  .s3-stat-val {
+    font-size: 28px;
+  }
+
+  .s3-stat-label {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Section 3 green */
+  .s3-green {
+    padding: 32px 20px;
+  }
+
+  .s3-green-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .s3-green-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .s3-green-desc {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .s3-green-stats {
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  /* Section 4 */
+  .section-4 {
+    margin-top: 24px;
+    padding: 16px 0 64px;
+  }
+
+  .section-4-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-card:first-child .project-image {
+    border-radius: 0 20px 20px 0;
+  }
+
+  .project-card:last-child .project-image {
+    border-radius: 0 20px 20px 0;
+  }
+
+  .project-btn {
+    font-size: 18px;
+    height: 52px;
+  }
 }

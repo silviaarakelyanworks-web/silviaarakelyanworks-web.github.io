@@ -217,6 +217,72 @@
     }
 
     .bottom-nav-link:hover { background: #c7c7c7; color: #111111; }
+
+    @media (max-width: 768px) {
+      .case-hero {
+        padding: 32px 0 40px;
+      }
+
+      .case-hero-inner {
+        padding: 0 20px;
+      }
+
+      .case-breadcrumb {
+        margin-bottom: 40px;
+      }
+
+      .case-hero h1 {
+        font-size: 28px;
+        margin-bottom: 16px;
+      }
+
+      .case-hero-desc {
+        font-size: 15px;
+        margin-bottom: 48px;
+      }
+
+      .case-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .case-stat-val {
+        font-size: 24px;
+      }
+
+      .case-layout {
+        grid-template-columns: 1fr;
+        padding: 48px 20px 64px;
+        gap: 0;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .meta-row {
+        grid-template-columns: 120px 1fr;
+        gap: 12px;
+      }
+
+      .section-heading {
+        font-size: 20px;
+      }
+
+      .bottom-nav {
+        padding: 0 0 24px !important;
+        gap: 0 !important;
+        justify-content: flex-start !important;
+      }
+
+      .bottom-nav-link {
+        height: 44px;
+        font-size: 18px;
+        padding: 0 18px;
+        border-radius: 100px;
+      }
+    }
   </style>
 </head>
 <body>
