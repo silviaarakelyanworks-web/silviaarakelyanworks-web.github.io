@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CJM — Afisha Restaurants</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #F2F2F0;
+    padding: 40px 40px 60px;
+  }
+
+  .cjm {
+    display: inline-block;
+    min-width: 100%;
+  }
+
+  .grid-8 {
+    display: grid;
+    grid-template-columns: 110px repeat(8, minmax(0, 1fr));
+    gap: 6px;
+    width: 1600px;
+  }
+
+  /* Stage headers */
+  .stage-row { margin-bottom: 2px; }
+  .stage {
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 9px 14px 7px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #111;
+    border-bottom: 2px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .stage.s2 { grid-column: span 2; }
+  .stage.s3 { grid-column: span 3; }
+
+  /* Row labels */
+  .row-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    line-height: 1.3;
+    background: #1B6FF6;
+    border-radius: 6px;
+  }
+
+  /* Cards */
+  .card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: #222;
+    min-height: 72px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .card.touch {
+    background: #FFA201;
+    color: #111;
+  }
+  .card.touch .sub {
+    font-size: 10px;
+    color: #7a4d00;
+    display: block;
+    margin-top: 2px;
+  }
+  .card.dark {
+    background: #2a2a2a;
+    color: #e8e8e8;
+  }
+  .card.blank {
+    background: transparent;
+    min-height: 0;
+  }
+
+  /* Row spacing */
+  .data-row { margin-bottom: 6px; }
+
+  /* Emotion row */
+  .emotion-row {
+    margin-bottom: 6px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 6px;
+    width: 1600px;
+  }
+  .emotion-wrap {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+<div class="cjm">
+
+  <!-- Stage headers -->
+  <div class="grid-8 stage-row">
+    <div></div>
+    <div class="stage s2">Waiting</div>
+    <div class="stage s3">Getting to the Restaurant</div>
+    <div class="stage s2">At the Restaurant</div>
+    <div class="stage">Post-visit Interaction</div>
+  </div>
+
+  <!-- Actions -->
+  <div class="grid-8 data-row">
+    <div class="row-label">Actions</div>
+    <div class="card">I tap "confirm" — a notification appears saying the request was sent and I need to wait for confirmation</div>
+    <div class="card">I see an SMS with a confirmed reservation</div>
+    <div class="card">I open the site, see a notification, tap it and view my reservation</div>
+    <div class="card">Before leaving I open my reservations and check the exact address</div>
+    <div class="card">I order a taxi to the restaurant</div>
+    <div class="card">A hostess greets me and walks me to the table</div>
+    <div class="card">Order, food, conversation... Pay the bill and leave</div>
+    <div class="card">I open Afisha-Restaurants, find the venue and leave a review and a like</div>
+  </div>
+
+  <!-- Touchpoints -->
+  <div class="grid-8 data-row">
+    <div class="row-label">Touchpoints</div>
+    <div class="card touch">www.afisha.ru/msk/restaurants/<br>Booking page</div>
+    <div class="card touch">SMS / Push notification</div>
+    <div class="card touch">www.afisha.ru/msk/restaurants/</div>
+    <div class="card touch">www.afisha.ru/msk/restaurants/<br>Restaurant card page</div>
+    <div class="card touch">Yandex.Taxi app<span class="sub">third-party touchpoint</span></div>
+    <div class="card touch">Table booking confirmation</div>
+    <div class="card touch">Waiting for waiter and friends</div>
+    <div class="card touch">www.afisha.ru/msk/restaurants/<br>Restaurant card page</div>
+  </div>
+
+  <!-- Expectations -->
+  <div class="grid-8 data-row">
+    <div class="row-label">Expectations</div>
+    <div class="card">I see a notice that my reservation will be confirmed shortly. I expect confirmation within the nearest time</div>
+    <div class="card">I hope to follow the link in the message and see my active reservation</div>
+    <div class="card">I expect to see the details of my booking</div>
+    <div class="card">I'll go to the restaurant card to find the address — I hope tapping it will open a taxi or map app</div>
+    <div class="card">I'll quickly find the restaurant by the photos and logo from the site</div>
+    <div class="card">The hostess should greet me and lead me to a comfortable table for me and my friends</div>
+    <div class="card">I expect the restaurant to be just like it appeared on the site — good service and food</div>
+    <div class="card">I hope my booking card is saved and stays in history</div>
+  </div>
+
+  <!-- Emotion curve -->
+  <div class="emotion-row">
+    <div class="row-label">Emotions</div>
+    <div class="emotion-wrap">
+      <svg viewBox="0 0 1484 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:110px;display:block;">
+        <line x1="0" y1="55" x2="1484" y2="55" stroke="#f0f0ec" stroke-width="1"/>
+        <path d="M 93,98 C 186,98 179,38 278,38 C 371,38 371,18 464,18 C 557,18 557,62 650,62 C 743,62 743,72 836,72 C 929,72 929,60 1022,60 C 1115,60 1115,28 1208,28 C 1301,28 1301,62 1394,62"
+              fill="none" stroke="#222" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="93"   y="98"   text-anchor="middle" dominant-baseline="central" font-size="20">😞</text>
+        <text x="278"  y="38"   text-anchor="middle" dominant-baseline="central" font-size="20">🙂</text>
+        <text x="464"  y="18"   text-anchor="middle" dominant-baseline="central" font-size="20">😊</text>
+        <text x="650"  y="62"   text-anchor="middle" dominant-baseline="central" font-size="20">😐</text>
+        <text x="836"  y="72"   text-anchor="middle" dominant-baseline="central" font-size="20">😐</text>
+        <text x="1022" y="60"   text-anchor="middle" dominant-baseline="central" font-size="20">😐</text>
+        <text x="1208" y="28"   text-anchor="middle" dominant-baseline="central" font-size="20">🙂</text>
+        <text x="1394" y="62"   text-anchor="middle" dominant-baseline="central" font-size="20">😐</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="grid-8 data-row">
+    <div class="row-label">Experience</div>
+    <div class="card">The notification arrived quickly</div>
+    <div class="card">The wait was short — the push already contained all the needed info</div>
+    <div class="card">Opening the site you immediately see the notification and know where to find the history</div>
+    <div class="card">I go to favourites to check the address and build a route</div>
+    <div class="card">Venue photos are easy to find — no need to scroll and search</div>
+    <div class="card">They address me by name and confirm the number of guests</div>
+    <div class="card">Good food and atmosphere — just like the photos on Afisha-Restaurants</div>
+    <div class="card">After booking, Afisha-Restaurants has no further contact with the user — no discounts, promotions or bonuses</div>
+  </div>
+
+  <!-- Pain points -->
+  <div class="grid-8 data-row">
+    <div class="row-label">Pain points</div>
+    <div class="card dark">Reservation isn't confirmed immediately — you have to wait with no indication of how long</div>
+    <div class="card blank"></div>
+    <div class="card blank"></div>
+    <div class="card dark">Taxi call was removed — you have to copy the address manually</div>
+    <div class="card dark">Can't build a route inside Afisha-Restaurants — have to switch between the map app and the site, ending up navigating by map only</div>
+    <div class="card blank"></div>
+    <div class="card blank"></div>
+    <div class="card dark">Reviews can only be written if you liked the venue. Review link is buried at the bottom of the page</div>
+  </div>
+
+</div>
+</body>
+</html>

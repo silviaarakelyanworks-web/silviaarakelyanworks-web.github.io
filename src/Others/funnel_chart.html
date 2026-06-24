@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Activation Funnel</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #F2F2F0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 48px 40px;
+  }
+
+  .title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    margin-bottom: 36px;
+    text-align: left;
+    width: 100%;
+    max-width: 920px;
+  }
+
+  .chart-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 920px;
+  }
+
+  .stats-row {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 40px;
+  }
+
+  .stat-cell {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 0 4px;
+  }
+
+  .stat-abs { font-size: 15px; font-weight: 700; color: #1a1a1a; }
+  .stat-pct-total { font-size: 12px; font-weight: 600; color: #7B34CF; }
+
+  .bars-area {
+    position: relative;
+    height: 280px;
+    border-bottom: 1.5px solid #ddd;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 4px;
+    margin-left: 40px;
+  }
+
+  .scale-label {
+    position: absolute;
+    left: -44px;
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+    transform: translateY(50%);
+    text-align: right;
+    width: 36px;
+  }
+
+  .col {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+  }
+
+  .bar {
+    width: 72%;
+    border-radius: 6px 6px 0 0;
+    background: #7B34CF;
+    position: relative;
+  }
+
+  .bar.dimmed { background: #CFA8EF; }
+
+  /* Badge прикреплён к верху бара */
+  .drop-badge {
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    background: #FF4D4D;
+    border-radius: 5px;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  .x-labels { display: flex; padding: 10px 4px 0; margin-left: 40px; }
+
+  .x-label {
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    line-height: 1.45;
+  }
+
+  .x-label strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="title">Activation Funnel — % of Unique Users</div>
+
+<div class="chart-inner">
+
+  <div class="stats-row">
+    <div class="stat-cell">
+      <span class="stat-abs">1,330</span>
+      <span class="stat-pct-total">100%</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-abs">689</span>
+      <span class="stat-pct-total">51.8%</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-abs">599</span>
+      <span class="stat-pct-total">45%</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-abs">637</span>
+      <span class="stat-pct-total">47.9%</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-abs">258</span>
+      <span class="stat-pct-total">19.4%</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-abs">218</span>
+      <span class="stat-pct-total">16.4%</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-abs">79</span>
+      <span class="stat-pct-total">5.9%</span>
+    </div>
+  </div>
+
+  <div class="bars-area">
+    <span class="scale-label" style="bottom:100%">100%</span>
+    <span class="scale-label" style="bottom:80%">80%</span>
+    <span class="scale-label" style="bottom:60%">60%</span>
+    <span class="scale-label" style="bottom:40%">40%</span>
+    <span class="scale-label" style="bottom:20%">20%</span>
+    <span class="scale-label" style="bottom:0%">0%</span>
+
+    <div class="col"><div class="bar" style="height:100%"></div></div>
+    <div class="col">
+      <div class="bar dimmed" style="height:51.8%">
+        <span class="drop-badge">−48.2%</span>
+      </div>
+    </div>
+    <div class="col"><div class="bar" style="height:45%"></div></div>
+    <div class="col"><div class="bar" style="height:47.9%"></div></div>
+    <div class="col">
+      <div class="bar dimmed" style="height:19.4%">
+        <span class="drop-badge">−59.5%</span>
+      </div>
+    </div>
+    <div class="col"><div class="bar" style="height:16.4%"></div></div>
+    <div class="col"><div class="bar" style="height:5.9%"></div></div>
+  </div>
+
+  <div class="x-labels">
+    <div class="x-label"><strong>01</strong>Modal click</div>
+    <div class="x-label"><strong>02</strong>Prompt submitted</div>
+    <div class="x-label"><strong>03</strong>LLM Response</div>
+    <div class="x-label"><strong>04</strong>Flow parsed</div>
+    <div class="x-label"><strong>05</strong>Flow applied</div>
+    <div class="x-label"><strong>06</strong>Flow published</div>
+    <div class="x-label"><strong>07</strong>5+ contacts</div>
+  </div>
+
+</div>
+
+</body>
+</html>

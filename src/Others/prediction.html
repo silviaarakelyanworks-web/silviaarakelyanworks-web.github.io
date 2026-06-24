@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prediction</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #F2F2F0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 60px 40px;
+  }
+  .wrap { width: 100%; max-width: 1100px; }
+
+  .apps {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  .app-block { flex: 1; }
+
+  .app-card {
+    background: #111;
+    border-radius: 16px;
+    padding: 24px 28px 28px;
+  }
+
+  .app-label {
+    display: inline-block;
+    background: #fff;
+    color: #111;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .feat {
+    background: #1a6ef5;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .revenue {
+    margin-top: 14px;
+    padding: 0 4px;
+  }
+  .revenue-label {
+    font-size: 12px;
+    color: #999;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .revenue-value {
+    font-size: 14px;
+    color: #222;
+  }
+
+  .gap-col {
+    width: 100px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 52px;
+    position: relative;
+  }
+  .gap-line {
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, #e53935 0, #e53935 6px, transparent 6px, transparent 12px);
+    position: relative;
+  }
+  .gap-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e53935;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .journey {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 20px;
+    margin-top: 8px;
+  }
+  .journey-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .journey-labels span {
+    font-size: 13px;
+    color: #aaa;
+  }
+  .journey-bar {
+    display: flex;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-left  { flex: 1; background: #1a6ef5; }
+  .bar-gap   { width: 100px; flex-shrink: 0; background: #e53935; }
+  .bar-right { flex: 1; background: #1a6ef5; }
+  .journey-caption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #e53935;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="apps">
+    <!-- Afisha -->
+    <div class="app-block">
+      <div class="app-card">
+        <div class="app-label">Afisha-Restaurants</div>
+        <div class="features">
+          <div class="feat">Restaurant database</div>
+          <div class="feat">Reviews & ratings</div>
+          <div class="feat">Reservations</div>
+          <div class="feat">Editorial content</div>
+        </div>
+      </div>
+      <div class="revenue">
+        <div class="revenue-label">Revenue model</div>
+        <div class="revenue-value">Advertising only</div>
+      </div>
+    </div>
+
+    <!-- Gap -->
+    <div class="gap-col">
+      <div class="gap-line">
+        <div class="gap-badge">GAP</div>
+      </div>
+    </div>
+
+    <!-- Plazius -->
+    <div class="app-block">
+      <div class="app-card">
+        <div class="app-label">Plazius</div>
+        <div class="features">
+          <div class="feat">Pre-order</div>
+          <div class="feat">Bill splitting</div>
+          <div class="feat">e-Tips</div>
+          <div class="feat">Loyalty program</div>
+        </div>
+      </div>
+      <div class="revenue">
+        <div class="revenue-label">Revenue model</div>
+        <div class="revenue-value">Limited reach, no discovery</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="journey">
+    <div class="journey-labels">
+      <span>Discover</span>
+      <span>Research</span>
+      <span>Book</span>
+      <span>Arrive</span>
+      <span>Order</span>
+      <span>Pay</span>
+    </div>
+    <div class="journey-bar">
+      <div class="bar-left"></div>
+      <div class="bar-gap"></div>
+      <div class="bar-right"></div>
+    </div>
+    <div class="journey-caption">← Full guest journey →</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI Flow Generation</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #F2F2F0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 32px;
+  }
+  .title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    margin-bottom: 36px;
+    text-align: left;
+    width: 100%;
+    max-width: 820px;
+  }
+  .main {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    max-width: 820px;
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #7B34CF;
+    border-radius: 6px;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+    height: 26px;
+    line-height: 18px;
+  }
+
+  /* LEFT */
+  .prompt-wrap {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .prompt-box {
+    background: #F0E8FC;
+    border: 1.5px solid #CFA8EF;
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+  }
+  .p-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .p-card-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+  }
+  .p-card-sub {
+    font-size: 10px;
+    color: #888;
+    line-height: 1.6;
+  }
+  .arrow-between {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+  }
+
+  /* MIDDLE */
+  .ai-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0 16px;
+  }
+  .ai-inner { display: flex; align-items: center; }
+  .connector-line { width: 20px; height: 2px; background: #CFA8EF; }
+  .connector-arrow {
+    width: 0; height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid #CFA8EF;
+  }
+  .ai-circle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0 10px;
+  }
+  .ai-bubble {
+    background: #fff;
+    border: 2px solid #CFA8EF;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(123,52,207,0.12);
+    font-size: 22px;
+  }
+  .ai-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7B34CF;
+    text-align: center;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  /* RIGHT */
+  .result-wrap {
+    flex-shrink: 0;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+  }
+  .result-box {
+    background: #F0E8FC;
+    border: 1.5px solid #CFA8EF;
+    border-radius: 16px;
+    padding: 24px 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .result-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1a1a1a;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    width: 100%;
+  }
+  .result-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7B34CF;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="title">AI Flow Generation</div>
+
+<div class="main">
+
+  <div class="prompt-wrap">
+    <div class="section-label">Prompt</div>
+    <div class="prompt-box">
+      <div class="p-card">
+        <div class="p-card-label">User's part</div>
+        <div class="p-card-sub">Business context<br>Use case</div>
+      </div>
+      <div class="arrow-between">
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="#9B6FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="p-card">
+        <div class="p-card-label">Manychat part</div>
+        <div class="p-card-sub">Flowbuilder JSON</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-wrap">
+    <div class="ai-inner">
+      <div class="connector-line"></div>
+      <div class="connector-arrow"></div>
+      <div class="ai-circle-wrap">
+        <div class="ai-bubble">✦</div>
+        <div class="ai-label">AI generates<br>automation</div>
+      </div>
+      <div class="connector-arrow"></div>
+      <div class="connector-line"></div>
+    </div>
+  </div>
+
+  <div class="result-wrap">
+    <div class="section-label">Result</div>
+    <div class="result-box">
+      <div class="result-item">
+        <div class="result-dot"></div>
+        AI generated flow
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

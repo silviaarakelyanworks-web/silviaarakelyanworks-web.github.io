@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AI Template Classification Flow</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #F2F2F0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 32px;
+  }
+
+  /* ── Page title ── */
+  .title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    margin-bottom: 36px;
+    text-align: left;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  /* ── Top-level row ── */
+  .main {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  .questions-wrap,
+  .results-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .questions-box,
+  .results-box {
+    flex: 1;
+  }
+
+  /* ── Shared section label ── */
+  .section-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #7B34CF;
+    border-radius: 6px;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+    height: 26px;
+    line-height: 18px;
+  }
+
+  /* ════════════════════════════
+     LEFT — Questions
+  ════════════════════════════ */
+  .questions-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .questions-box {
+    background: #F0E8FC;
+    border: 1.5px solid #CFA8EF;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .q-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .q-num {
+    font-size: 10px;
+    font-weight: 700;
+    color: #7B34CF;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .q-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.35;
+  }
+
+  .q-desc {
+    font-size: 10px;
+    color: #888;
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  .arrow-between {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+  }
+
+  /* ════════════════════════════
+     MIDDLE — AI node
+  ════════════════════════════ */
+  .ai-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0 20px;
+  }
+
+  .ai-wrap .label-spacer {
+    display: none;
+  }
+
+  .ai-connector {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .connector-line {
+    width: 24px;
+    height: 2px;
+    background: #CFA8EF;
+  }
+
+  .connector-arrow {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid #CFA8EF;
+  }
+
+  .ai-inner {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .ai-circle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-bubble {
+    background: #fff;
+    border: 2px solid #CFA8EF;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(123,52,207,0.12);
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .ai-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7B34CF;
+    text-align: center;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  /* ════════════════════════════
+     RIGHT — Results
+  ════════════════════════════ */
+  .results-wrap {
+    flex-shrink: 0;
+    width: 210px;
+  }
+
+  .results-box {
+    background: #F0E8FC;
+    border: 1.5px solid #CFA8EF;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .results-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a1a;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CFA8EF;
+    margin-bottom: 2px;
+  }
+
+  .template-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #1a1a1a;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .template-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7B34CF;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="title">AI Template Classification Flow</div>
+
+<div class="main">
+
+  <!-- LEFT: Classification Questions -->
+  <div class="questions-wrap">
+    <div class="section-label">Classification Questions</div>
+    <div class="questions-box">
+
+      <div class="q-card">
+        <div class="q-num">Q1</div>
+        <div class="q-title">Context of the Business</div>
+        <div class="q-desc">Who is the user, what they do, what problem they solve</div>
+      </div>
+
+      <div class="arrow-between">
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="#9B6FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="q-card">
+        <div class="q-num">Q2</div>
+        <div class="q-title">Automation Goal</div>
+        <div class="q-desc">What outcome should the automation lead the subscriber to</div>
+      </div>
+
+      <div class="arrow-between">
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="#9B6FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="q-card">
+        <div class="q-num">Q3</div>
+        <div class="q-title">Automation Context</div>
+        <div class="q-desc">CTA, use cases — makes the content more relevant</div>
+      </div>
+
+      <div class="arrow-between">
+        <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="#9B6FD4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="q-card">
+        <div class="q-num">Q4</div>
+        <div class="q-title">Automation Trigger</div>
+        <div class="q-desc">Business context for the AI to personalise the template</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIDDLE: AI Node -->
+  <div class="ai-wrap">
+    <div class="label-spacer"></div>
+    <div class="ai-inner">
+      <div class="connector-line"></div>
+      <div class="connector-arrow"></div>
+
+      <div class="ai-circle-wrap" style="margin: 0 12px;">
+        <div class="ai-bubble">✦</div>
+        <div class="ai-label">AI picks<br>the right template</div>
+      </div>
+
+      <div class="connector-arrow"></div>
+      <div class="connector-line"></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Result -->
+  <div class="results-wrap">
+    <div class="section-label">Result</div>
+    <div class="results-box">
+      <div class="results-title">Use Case Templates</div>
+      <div class="template-item"><div class="template-dot"></div>Collect Email</div>
+      <div class="template-item"><div class="template-dot"></div>Share a Link</div>
+      <div class="template-item"><div class="template-dot"></div>Schedule an Appointment</div>
+      <div class="template-item"><div class="template-dot"></div>Participate in a Quiz</div>
+      <div class="template-item"><div class="template-dot"></div>Provide a Specific Answer</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
