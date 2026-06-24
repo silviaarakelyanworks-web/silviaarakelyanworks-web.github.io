@@ -185,6 +185,19 @@
       border-left-color: rgba(0,0,0,0.1);
     }
 
+    .toc-parent {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      padding: 11px 0 11px 12px;
+    }
+
+    .toc a.toc-child {
+      padding-left: 24px;
+      font-size: 13px;
+    }
+
     /* ─── BOTTOM NAV ─── */
     .bottom-nav {
       padding: 0 20px 24px;
@@ -343,7 +356,7 @@
       </div>
 
       <div class="content-section" id="problem">
-        <h2 class="section-heading">The Problem</h2>
+        <h2 class="section-heading">Problem</h2>
         <p class="content-text">Sheet Music Plus's checkout conversion was 83–87% — good by industry standards, but our data suggested hidden friction. Users were reaching the checkout page and not making it to payment.</p>
         <p class="content-text">The business question was simple: why are users who clearly intend to buy failing to complete the address step?</p>
         <p class="content-text">Two compounding issues were known going in:</p>
@@ -353,8 +366,13 @@
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="research">
-        <h2 class="section-heading">Research: Finding where users actually stopped</h2>
+      <div class="content-section" id="hypothesis">
+        <h2 class="section-heading">Hypothesis</h2>
+        <p class="content-text">Placeholder — to be filled in.</p>
+      </div>
+
+      <div class="content-section" id="discovery">
+        <h2 class="section-heading">Discovery</h2>
         <p class="content-text">Before designing anything, I ran a structured data study to answer five specific questions about where and why users were dropping off.</p>
 
         <p class="content-text"><strong>Finding 1 — Users start the form, but don't finish it</strong><br>Over 93% of users with a blank form start filling it. But only 72% of those who begin the Full Address form actually reach the payment page — compared to 92% for the Country-only flow. That's a 20-point gap created entirely by form complexity.</p>
@@ -369,8 +387,8 @@
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="solution">
-        <h2 class="section-heading">The Solution</h2>
+      <div class="content-section" id="design-v1">
+        <h2 class="section-heading">Initial design</h2>
         <p class="content-text">The redesign addressed three layers of friction simultaneously.</p>
 
         <p class="content-text"><strong>Layer 1 — Reduce required fields to the legal minimum by region</strong><br>After mapping legal requirements for digital vs. physical products across EU, US, and rest-of-world, we stripped each form to its true minimum. For US digital purchases: country and ZIP only. For EU digital: country, name, postal code.</p>
@@ -381,8 +399,8 @@
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="experiment">
-        <h2 class="section-heading">Experiment Design</h2>
+      <div class="content-section" id="validation">
+        <h2 class="section-heading">Validation</h2>
         <p class="content-text">The change was shipped as an A/B test with two primary metrics:</p>
         <p class="content-text"><strong>Primary — Checkout → Payment</strong><br>Baseline 83.85%, MDE 5%. Sample 1,079, duration ~3 days.</p>
         <p class="content-text"><strong>Secondary — ARPU</strong><br>Baseline $0.44, MDE 10%. Sample 114,000, duration ~7 days.</p>
@@ -390,20 +408,21 @@
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="results">
-        <h2 class="section-heading">Results</h2>
+      <div class="content-section" id="design-v2">
+        <h2 class="section-heading">Refined design</h2>
+        <p class="content-text">Placeholder — to be filled in.</p>
+      </div>
+
+      <div class="content-section" id="result">
+        <h2 class="section-heading">Result</h2>
         <p class="content-text">The experiment launched June 8, 2026. Results are pending — final analysis scheduled June 15.</p>
         <p class="content-text"><strong>+5%</strong> — Projected checkout → payment conversion. Based on the pre-experiment model.</p>
         <p class="content-text"><strong>+$700</strong> — Projected daily revenue. ARPU projected to increase from $0.44 to $0.47.</p>
         <p class="content-text">The pre-experiment data gave strong confidence in the direction: the problems were measurable, the solutions mapped directly to identified failure modes, and the non-EU validation bug fix alone was expected to recover a meaningful segment that was being blocked despite completing the form correctly.</p>
-        <div class="image-placeholder">Image placeholder</div>
-      </div>
-
-      <div class="content-section" id="takeaways">
-        <h2 class="section-heading">Takeaways</h2>
         <p class="content-text">This project was as much a data investigation as a design project. The headline conversion number looked acceptable — it took a structured breakdown of the funnel by form type, prefill state, and error type to find where real money was being lost.</p>
         <p class="content-text">The most surprising finding: prefilling the address form barely improved conversion (81.3% vs 74.4% for Full Address). Users weren't dropping because of effort alone — they were dropping because they didn't understand what the form wanted from them. That distinction changed the design direction from "reduce fields" to "clarify requirements at every step."</p>
         <p class="content-text">The next priority would be the 3DS authentication failure for EU users whose banks don't support it — a 57% churn rate on a recoverable error that currently has no user-facing guidance at all.</p>
+        <div class="image-placeholder">Image placeholder</div>
       </div>
 
     </div>
@@ -412,12 +431,14 @@
     <aside class="sidebar">
       <div class="toc">
         <a href="#overview" class="active">Overview</a>
-        <a href="#problem">The Problem</a>
-        <a href="#research">Research</a>
-        <a href="#solution">The Solution</a>
-        <a href="#experiment">Experiment Design</a>
-        <a href="#results">Results</a>
-        <a href="#takeaways">Takeaways</a>
+        <a href="#problem">Problem</a>
+        <a href="#hypothesis">Hypothesis</a>
+        <span class="toc-parent">Process</span>
+        <a href="#discovery" class="toc-child">Discovery</a>
+        <a href="#design-v1" class="toc-child">Initial design</a>
+        <a href="#validation" class="toc-child">Validation</a>
+        <a href="#design-v2" class="toc-child">Refined design</a>
+        <a href="#result">Result</a>
       </div>
     </aside>
 

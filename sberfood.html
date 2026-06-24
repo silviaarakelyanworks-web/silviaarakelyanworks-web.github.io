@@ -226,17 +226,19 @@
 
     .toc a:hover { color: #0a0a0a; }
 
-    .toc-sub {
+    .toc-parent {
       display: block;
-      font-size: 13px;
-      font-weight: 400;
-      color: rgba(0,0,0,0.3);
-      padding: 8px 0 8px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      padding: 11px 0 11px 12px;
     }
 
-    .toc a.toc-impl.active ~ .toc-sub {
-      color: #0a0a0a;
+    .toc a.toc-child {
+      padding-left: 24px;
+      font-size: 13px;
     }
+
     .toc a.active {
       color: #0a0a0a;
       border-left-color: rgba(0,0,0,0.1);
@@ -409,28 +411,33 @@
         <img src="src/4. Sber/1.png" style="width:100%;display:block;margin:32px 0;" alt="" />
       </div>
 
-      <div class="content-section" id="prediction">
-        <h2 class="section-heading">Prediction</h2>
+      <div class="content-section" id="hypothesis">
+        <h2 class="section-heading">Hypothesis</h2>
         <p class="content-text">If one app combined Afisha's discovery strength with Plazius's transactional features, it could give Plazius distribution through Afisha's audience and locations, while giving Afisha a path to transaction-based revenue instead of advertising alone.</p>
         <img src="src/4. Sber/2.png" style="width:100%;display:block;margin:32px 0;" alt="" />
       </div>
 
-      <div class="content-section" id="implementation">
-        <h2 class="section-heading">Implementation</h2>
-
-        <p class="content-text"><strong>Design Sprint</strong></p>
+      <div class="content-section" id="discovery">
+        <h2 class="section-heading">Discovery</h2>
         <p class="content-text">The art director facilitated a Google Design Sprint. We split the work by functional area: I focused on the in-restaurant experience (pre-order, payments, loyalty), my colleague on discovery scenarios (search, reviews, booking). We each defined personas and user stories for our area, then cross-reviewed each other's work before mapping both into a single CJM. This surfaced where the two journeys should connect and produced the initial backlog and key screen drafts.</p>
         <img src="src/4. Sber/3.png" style="width:100%;display:block;margin:32px 0;" alt="" />
         <p class="content-text">The Afisha CJM exposed where the journey broke down after booking: no taxi or route integration to get the user to the restaurant, and no contact with the user after the visit — no promotions, no easy way to leave a review. These gaps mapped directly onto what Plazius already solved on-site, confirming where the two products needed to connect.</p>
-        <p class="content-text"><strong>First design</strong></p>
+      </div>
+
+      <div class="content-section" id="design-v1">
+        <h2 class="section-heading">Initial design</h2>
         <p class="content-text">After stakeholder alignment, the design team built out the first full UI and a design system to give the merged product its own visual identity, distinct from both legacy apps.</p>
         <img src="src/4. Sber/5.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+      </div>
 
-        <p class="content-text"><strong>Usability testing</strong></p>
+      <div class="content-section" id="validation">
+        <h2 class="section-heading">Validation</h2>
         <p class="content-text">We ran 15+ interviews, 10+ hallway tests in cafes and food courts, and surveys across 10+ prototypes per use case. Six findings shaped the next design iteration:</p>
         <img src="src/4. Sber/6.png" style="width:100%;display:block;margin:32px 0;" alt="" />
+      </div>
 
-        <p class="content-text"><strong>Refining the UX</strong></p>
+      <div class="content-section" id="design-v2">
+        <h2 class="section-heading">Refined design</h2>
         <p class="content-text">Each fix mapped directly to a finding above:</p>
         <ul class="content-text" style="padding-left:20px;">
           <li>Moved service buttons from the quick-access button to the feed's top bar — fixing the false-action confusion.</li>
@@ -441,8 +448,8 @@
         <img src="src/4. Sber/8.png" style="width:100%;display:block;margin:32px 0;" alt="" />
       </div>
 
-      <div class="content-section" id="results">
-        <h2 class="section-heading">Results</h2>
+      <div class="content-section" id="result">
+        <h2 class="section-heading">Result</h2>
         <p class="content-text">These changes shipped in the public release. SberFood launched on the AppStore with 39.6K+ ratings and a 4.9 average, going on to reach 1M MAU and $2M in annual revenue.</p>
         <img src="src/4. Sber/9.png" style="width:100%;display:block;margin:32px 0;" alt="" />
       </div>
@@ -454,13 +461,13 @@
       <div class="toc">
         <a href="#overview" class="active">Overview</a>
         <a href="#problem">Problem</a>
-        <a href="#prediction">Prediction</a>
-        <a href="#implementation" class="toc-impl">Implementation</a>
-        <span class="toc-sub">Design Sprint</span>
-        <span class="toc-sub">First design</span>
-        <span class="toc-sub">Usability testing</span>
-        <span class="toc-sub">Refining the UX</span>
-        <a href="#results">Results</a>
+        <a href="#hypothesis">Hypothesis</a>
+        <span class="toc-parent">Process</span>
+        <a href="#discovery" class="toc-child">Discovery</a>
+        <a href="#design-v1" class="toc-child">Initial design</a>
+        <a href="#validation" class="toc-child">Validation</a>
+        <a href="#design-v2" class="toc-child">Refined design</a>
+        <a href="#result">Result</a>
       </div>
     </aside>
 

@@ -193,6 +193,19 @@
       border-left-color: rgba(0,0,0,0.1);
     }
 
+    .toc-parent {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      padding: 11px 0 11px 12px;
+    }
+
+    .toc a.toc-child {
+      padding-left: 24px;
+      font-size: 13px;
+    }
+
     /* ─── BOTTOM NAV ─── */
     .bottom-nav {
       padding: 0 20px 24px;
@@ -351,17 +364,13 @@
       </div>
 
       <div class="content-section" id="problem">
-        <h2 class="section-heading">The Problem</h2>
+        <h2 class="section-heading">Problem</h2>
         <p class="content-text">Activation is Manychat's north star for new users — an account is considered activated once a user reaches their first meaningful value moment: setting up automation and collecting real contacts.</p>
         <p class="content-text">For Creators, this wasn't happening at the rate it should.</p>
         <p class="content-text"><strong>Template Questionnaire CR was low</strong><br>The onboarding questionnaire was static and generic — it didn't speak to how Creators actually use Manychat, so most ignored it or dropped off.</p>
         <p class="content-text"><strong>Trigger setup CR was low</strong><br>Even Creators who reached the FlowBuilder struggled to configure their first trigger. The setup flow had too many steps, unclear options, and no guidance toward the most effective path.</p>
         <div class="image-placeholder">Image placeholder</div>
         <p class="image-caption">Home Tab + FlowBuilder trigger — annotated drop-off points.</p>
-      </div>
-
-      <div class="content-section" id="insight">
-        <h2 class="section-heading">The insight that shaped everything</h2>
         <p class="content-text">Before jumping to solutions, I looked at what Creators were actually doing inside Manychat.</p>
         <p class="content-text"><strong>Key behaviour</strong><br>72% of Creators used one-node automation with a Comment Reply Trigger.</p>
         <p class="content-text">The use case was almost always the same: ask viewers to comment on a post with a keyword → send a DM with a discount link → convert them into subscribers or buyers.</p>
@@ -369,8 +378,8 @@
         <p class="content-text">Instead of designing for every possible Creator use case, we designed for the one that actually drives growth.</p>
       </div>
 
-      <div class="content-section" id="hypotheses">
-        <h2 class="section-heading">Three hypotheses, three tasks</h2>
+      <div class="content-section" id="hypothesis">
+        <h2 class="section-heading">Hypothesis</h2>
         <p class="content-text">Based on the insight, I formulated three parallel hypotheses — each became an independent design task to allow separate testing and prioritisation.</p>
         <p class="content-text"><strong>Task 1 — Personalised IG Feed on Home Tab</strong><br>If we show Creators their own posts with automation prompts surfaced inline, they'll engage more readily with the setup flow.</p>
         <p class="content-text"><strong>Task 2 — Simplified Comment Reply Trigger</strong><br>If we reduce friction in the most popular trigger setup, more Creators will successfully complete their first automation.</p>
@@ -378,8 +387,8 @@
         <p class="content-text">Tasks 1 and 3 were scoped and shipped as lighter experiments. Task 2 had the most unknowns and required dedicated research — it became the deepest design investment.</p>
       </div>
 
-      <div class="content-section" id="task1">
-        <h2 class="section-heading">Task 1: Personalised IG Feed on Home Tab</h2>
+      <div class="content-section" id="discovery">
+        <h2 class="section-heading">Discovery</h2>
         <p class="content-text"><strong>Approach</strong><br>I started by mapping the Creator's journey outside Manychat — what tools do they use, what interfaces are familiar, what mental model do they bring.</p>
         <p class="content-text">I analysed 5+ SMM platforms to identify patterns in post-and-analytics interfaces. The goal was to make the personalised feed feel native to how Creators already work, not like a new product to learn.</p>
         <p class="content-text"><strong>Design decision</strong><br>The entry point is a banner surfaced on the Home Tab, tied to the Creator's most recent post. It highlights unanswered comments and offers a one-click path to set up an automated reply.</p>
@@ -388,8 +397,8 @@
         <p class="image-caption">Home Tab with personalised feed.</p>
       </div>
 
-      <div class="content-section" id="task2">
-        <h2 class="section-heading">Task 2: Simplifying the Comment Reply Trigger</h2>
+      <div class="content-section" id="design-v1">
+        <h2 class="section-heading">Initial design</h2>
         <p class="content-text">This was the highest-risk task — and the one with the most direct impact on Automation Setup Rate.</p>
         <p class="content-text"><strong>15+ Creator interviews</strong><br>Reviewed existing recordings, focused on newcomers. Key pattern: users didn't know which post or keyword option to choose, and abandoned when faced with too many decisions at once.</p>
         <p class="content-text"><strong>Usage data analysis</strong><br>Mapped drop-offs across every step of the trigger setup. The steepest drop was at post selection and keyword creation.</p>
@@ -401,23 +410,24 @@
         <p class="image-caption">Before / After — trigger setup flow.</p>
       </div>
 
-      <div class="content-section" id="task3">
-        <h2 class="section-heading">Task 3: Guided onboarding</h2>
+      <div class="content-section" id="validation">
+        <h2 class="section-heading">Validation</h2>
         <p class="content-text">The onboarding flow was redesigned to route new Creators directly into the Comment Reply use case — bypassing the generic questionnaire and installing a pre-built template as the starting point.</p>
         <p class="content-text">This reduced the number of decisions required before a Creator had a working automation, and increased FlowBuilder entry rate by shortening the path from sign-up to first setup moment.</p>
         <div class="image-placeholder">Image placeholder</div>
         <p class="image-caption">Guided onboarding flow.</p>
       </div>
 
-      <div class="content-section" id="results">
-        <h2 class="section-heading">Results</h2>
+      <div class="content-section" id="design-v2">
+        <h2 class="section-heading">Refined design</h2>
+        <p class="content-text">Placeholder — to be filled in.</p>
+      </div>
+
+      <div class="content-section" id="result">
+        <h2 class="section-heading">Result</h2>
         <p class="content-text"><strong>+21%</strong> — Automation Setup Rate (A/B vs control). Direct lift attributable to the redesigned Home Tab experiment.</p>
         <p class="content-text"><strong>+15%</strong> — User activation (overall). Reaching the first value moment within Month 1.</p>
         <p class="content-text">The A/B test ran against the previous Home Tab as control. Qualitative interviews confirmed what the numbers suggested: Creators completed trigger setup faster and with less confusion. Several newcomers described the keyword step as the first time the product felt "obvious."</p>
-      </div>
-
-      <div class="content-section" id="takeaways">
-        <h2 class="section-heading">Takeaways</h2>
         <p class="content-text">This experiment worked because it started from a single, specific behavioural insight rather than a broad brief. Designing for 72% of users instead of 100% made every decision easier to justify and every trade-off easier to make.</p>
         <p class="content-text">The main thing I'd do differently: involve Support earlier. Their knowledge of which options cause account issues was critical — but it came late in the process. Building that input into the research phase from the start would have saved a design iteration.</p>
         <p class="content-text">The natural next step is adapting this experience for advanced Creators — users who've already set up their first automation and need more transparency into performance metrics. The personalised feed is already the right surface; it just needs a second layer of depth.</p>
@@ -429,14 +439,14 @@
     <aside class="sidebar">
       <div class="toc">
         <a href="#overview" class="active">Overview</a>
-        <a href="#problem">The Problem</a>
-        <a href="#insight">The Insight</a>
-        <a href="#hypotheses">Three Hypotheses</a>
-        <a href="#task1">Task 1 — Personalised Feed</a>
-        <a href="#task2">Task 2 — Trigger Setup</a>
-        <a href="#task3">Task 3 — Onboarding</a>
-        <a href="#results">Results</a>
-        <a href="#takeaways">Takeaways</a>
+        <a href="#problem">Problem</a>
+        <a href="#hypothesis">Hypothesis</a>
+        <span class="toc-parent">Process</span>
+        <a href="#discovery" class="toc-child">Discovery</a>
+        <a href="#design-v1" class="toc-child">Initial design</a>
+        <a href="#validation" class="toc-child">Validation</a>
+        <a href="#design-v2" class="toc-child">Refined design</a>
+        <a href="#result">Result</a>
       </div>
     </aside>
 

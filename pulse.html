@@ -186,6 +186,19 @@
       border-left-color: rgba(0,0,0,0.1);
     }
 
+    .toc-parent {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      padding: 11px 0 11px 12px;
+    }
+
+    .toc a.toc-child {
+      padding-left: 24px;
+      font-size: 13px;
+    }
+
     /* ─── BOTTOM NAV ─── */
     .bottom-nav {
       padding: 0 20px 24px;
@@ -343,34 +356,45 @@
         </div>
       </div>
 
-      <div class="content-section" id="summary">
-        <h2 class="section-heading">Summary screen</h2>
+      <div class="content-section" id="problem">
+        <h2 class="section-heading">Problem</h2>
+        <p class="content-text">Placeholder — to be filled in.</p>
+      </div>
+
+      <div class="content-section" id="hypothesis">
+        <h2 class="section-heading">Hypothesis</h2>
+        <p class="content-text">Placeholder — to be filled in.</p>
+      </div>
+
+      <div class="content-section" id="discovery">
+        <h2 class="section-heading">Discovery</h2>
         <p class="content-text">Delivers a concise overview of asset information, enabling users to make informed decisions at a glance.</p>
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="chart">
-        <h2 class="section-heading">Full chart view</h2>
+      <div class="content-section" id="design-v1">
+        <h2 class="section-heading">Initial design</h2>
         <p class="content-text">Offers a robust analytical tool in a mobile-friendly format. Users gain access to a comprehensive range of asset metrics, including unique insights like Social Sentiment and On-chain Activity, powered by DataLight.</p>
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="analytics">
-        <h2 class="section-heading">Analytics</h2>
+      <div class="content-section" id="validation">
+        <h2 class="section-heading">Validation</h2>
         <p class="content-text">Provides key asset metrics in a consolidated format, streamlining the analysis process for better decision-making.</p>
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="portfolio">
-        <h2 class="section-heading">Portfolio</h2>
+      <div class="content-section" id="design-v2">
+        <h2 class="section-heading">Refined design</h2>
         <p class="content-text">Allows users to compare portfolio performance against other assets and indices. Includes advanced metrics such as Beta trends and volatility indicators.</p>
+        <div class="image-placeholder">Image placeholder</div>
+        <p class="content-text">Features a highly customizable notification system. Users can stay informed not just about price fluctuations but also a wide array of metrics from DataLight, such as transactional activity surges, trading volumes, and social media mentions.</p>
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="alerts">
-        <h2 class="section-heading">Alerts</h2>
-        <p class="content-text">Features a highly customizable notification system. Users can stay informed not just about price fluctuations but also a wide array of metrics from DataLight, such as transactional activity surges, trading volumes, and social media mentions.</p>
-        <div class="image-placeholder">Image placeholder</div>
+      <div class="content-section" id="result">
+        <h2 class="section-heading">Result</h2>
+        <p class="content-text">Placeholder — to be filled in.</p>
       </div>
 
     </div>
@@ -379,11 +403,14 @@
     <aside class="sidebar">
       <div class="toc">
         <a href="#overview" class="active">Overview</a>
-        <a href="#summary">Summary screen</a>
-        <a href="#chart">Full chart view</a>
-        <a href="#analytics">Analytics</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#alerts">Alerts</a>
+        <a href="#problem">Problem</a>
+        <a href="#hypothesis">Hypothesis</a>
+        <span class="toc-parent">Process</span>
+        <a href="#discovery" class="toc-child">Discovery</a>
+        <a href="#design-v1" class="toc-child">Initial design</a>
+        <a href="#validation" class="toc-child">Validation</a>
+        <a href="#design-v2" class="toc-child">Refined design</a>
+        <a href="#result">Result</a>
       </div>
     </aside>
 

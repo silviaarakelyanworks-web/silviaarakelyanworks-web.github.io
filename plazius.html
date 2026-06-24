@@ -180,17 +180,19 @@
 
     .toc a:hover { color: #0a0a0a; }
 
-    .toc-sub {
+    .toc-parent {
       display: block;
-      font-size: 13px;
-      font-weight: 400;
-      color: rgba(0,0,0,0.3);
-      padding: 8px 0 8px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0,0,0,0.4);
+      padding: 11px 0 11px 12px;
     }
 
-    .toc a.toc-impl.active ~ .toc-sub {
-      color: #0a0a0a;
+    .toc a.toc-child {
+      padding-left: 24px;
+      font-size: 13px;
     }
+
     .toc a.active {
       color: #0a0a0a;
       border-left-color: rgba(0,0,0,0.1);
@@ -359,34 +361,38 @@
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="prediction">
-        <h2 class="section-heading">Prediction</h2>
+      <div class="content-section" id="hypothesis">
+        <h2 class="section-heading">Hypothesis</h2>
         <p class="content-text"><strong>Hypothesis for pre-order feature:</strong> If we launch the pre-order function in coffee shops across the city, our users will save time, and coffee shops will relieve cashiers and expedite the order pickup process. Consequently, cafes will integrate our service for a commission.</p>
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="implementation">
-        <h2 class="section-heading">Implementation</h2>
-
-        <p class="content-text"><strong>Competitor analysis</strong></p>
+      <div class="content-section" id="discovery">
+        <h2 class="section-heading">Discovery</h2>
         <p class="content-text">I conducted competitor analysis to reuse mechanics that are already familiar to users.</p>
         <div class="image-placeholder">Image placeholder</div>
+      </div>
 
-        <p class="content-text"><strong>Design</strong></p>
+      <div class="content-section" id="design-v1">
+        <h2 class="section-heading">Initial design</h2>
         <p class="content-text">I created a design system for the updated Plazius and assisted developers in implementing these improvements.</p>
         <div class="image-placeholder">Image placeholder</div>
+      </div>
 
-        <p class="content-text"><strong>Usability testing</strong></p>
+      <div class="content-section" id="validation">
+        <h2 class="section-heading">Validation</h2>
         <p class="content-text">The Pre-ordering section underwent testing not on prototypes, but on Plazius users, and we received valuable feedback from restaurants.</p>
         <div class="image-placeholder">Image placeholder</div>
+      </div>
 
-        <p class="content-text"><strong>Design improvements</strong></p>
+      <div class="content-section" id="design-v2">
+        <h2 class="section-heading">Refined design</h2>
         <p class="content-text">For the pre-order feature, added a description of how the service works, the option to package the order 'for dine-in', include comments, and specify a name for the cashier to expect during pickup.</p>
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
-      <div class="content-section" id="results">
-        <h2 class="section-heading">Results</h2>
+      <div class="content-section" id="result">
+        <h2 class="section-heading">Result</h2>
         <p class="content-text">Metrics dynamics one month after the launch of the Pre-order feature:</p>
         <ul class="content-text" style="padding-left:20px;">
           <li>The number of establishments offering pre-orders increased from 60 to 110</li>
@@ -404,13 +410,13 @@
       <div class="toc">
         <a href="#overview" class="active">Overview</a>
         <a href="#problem">Problem</a>
-        <a href="#prediction">Prediction</a>
-        <a href="#implementation" class="toc-impl">Implementation</a>
-        <span class="toc-sub">Competitor analysis</span>
-        <span class="toc-sub">Design</span>
-        <span class="toc-sub">Usability testing</span>
-        <span class="toc-sub">Design improvements</span>
-        <a href="#results">Results</a>
+        <a href="#hypothesis">Hypothesis</a>
+        <span class="toc-parent">Process</span>
+        <a href="#discovery" class="toc-child">Discovery</a>
+        <a href="#design-v1" class="toc-child">Initial design</a>
+        <a href="#validation" class="toc-child">Validation</a>
+        <a href="#design-v2" class="toc-child">Refined design</a>
+        <a href="#result">Result</a>
       </div>
     </aside>
 
