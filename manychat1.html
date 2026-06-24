@@ -414,8 +414,8 @@
         <p class="content-text">Vision-led, not data-led — speed mattered more than certainty at this stage.</p>
         <p class="content-text"><strong>User side:</strong> describe your business and use case → AI generates the flow.<br><strong>Under the hood:</strong> prompt = business context + Flowbuilder's JSON logic, so output maps to real flow steps.</p>
         <img src="src/2. MCai/5.png" style="width:100%;display:block;margin:32px 0;" alt="" />
-        <video src="src/2. MCai/6.mp4" style="width:100%;display:block;margin:32px 0;border-radius:4px;" autoplay loop muted playsinline></video>
         <p class="content-text"><strong>Design decision:</strong> open text over a structured form, to match "just describe what you want" and skip Flowbuilder terminology. Trade-off we hadn't tested: freedom assumes the user already knows what to ask for.</p>
+        <video src="src/2. MCai/6.mp4" style="width:100%;display:block;margin:32px 0;border-radius:4px;" autoplay loop muted playsinline></video>
       </div>
 
       <div class="content-section" id="validation">
@@ -435,11 +435,10 @@
         <p class="content-text">Real audience: new users. Real failure mode: not knowing how to phrase a request in a system they'd never used. Open text assumed prior knowledge our users didn't have.</p>
         <p class="content-text"><strong>New hypothesis:</strong> a guided flow tailored to new-user use cases increases successful, predictable outcomes — and conversion to publishing.</p>
         <p class="content-text"><strong>User side:</strong> answer 4 guided questions → AI assembles automation from a template.<br><strong>Questions:</strong> business context, automation goal, automation context, trigger.<br><strong>Templates:</strong> Collect Email, Link, Schedule an Appointment, Quiz, Specific Answer.</p>
-        <p class="content-text"><strong>Design decision:</strong> guided questions over open text, to guarantee a usable result for first-time builders. Trade-off, made explicit: a lower ceiling — fewer possible automations — for a much higher floor — far more users successfully reach a published flow.</p>
-        <div class="image-placeholder">Image placeholder</div>
       </div>
 
       <img src="src/2. MCai/11.png" style="width:100%;display:block;margin:0 0 32px;" alt="AI Assistant initial design" />
+      <p class="content-text" style="margin-bottom:32px;"><strong>Design decision:</strong> guided questions over open text, to guarantee a usable result for first-time builders. Trade-off, made explicit: a lower ceiling — fewer possible automations — for a much higher floor — far more users successfully reach a published flow.</p>
       <video src="src/2. MCai/12.mp4" style="width:100%;display:block;margin:0 0 64px;border-radius:4px;" autoplay loop muted playsinline></video>
 
       <div class="content-section" id="result">
@@ -506,25 +505,53 @@
     lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;cursor:zoom-out;align-items:center;justify-content:center;padding:40px;';
     const lightboxImg = document.createElement('img');
     lightboxImg.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;';
+    const lightboxVideo = document.createElement('video');
+    lightboxVideo.style.cssText = 'max-width:100%;max-height:100%;border-radius:4px;';
+    lightboxVideo.controls = true;
+    lightboxVideo.autoplay = true;
+    lightboxVideo.loop = true;
     lightbox.appendChild(lightboxImg);
+    lightbox.appendChild(lightboxVideo);
     document.body.appendChild(lightbox);
 
-    document.querySelectorAll('.case-content img').forEach(img => {
+    function openLightbox() {
+      lightbox.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+      lightboxVideo.pause();
+      lightboxVideo.src = '';
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.case-content img, .case-layout img').forEach(img => {
+      if (img.closest('.avatar')) return;
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
+        lightboxImg.style.display = 'block';
+        lightboxVideo.style.display = 'none';
         lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        openLightbox();
       });
     });
 
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-      document.body.style.overflow = '';
+    document.querySelectorAll('.case-content video, .case-layout video').forEach(vid => {
+      vid.style.cursor = 'zoom-in';
+      vid.addEventListener('click', () => {
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = vid.src;
+        openLightbox();
+      });
     });
 
+    lightbox.addEventListener('click', closeLightbox);
+
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 
