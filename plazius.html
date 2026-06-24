@@ -19,7 +19,7 @@
 
     /* ─── HERO BANNER ─── */
     .header {
-      background: #FF5101 !important;
+      background: #FF5101;
       transition: none;
       position: sticky;
       top: 0;
@@ -426,10 +426,12 @@
     const header = document.querySelector('.header');
     const hero = document.querySelector('.case-hero');
 
-    window.addEventListener('scroll', () => {
+    function updateHeader() {
       const heroBottom = hero.getBoundingClientRect().bottom;
       header.style.background = heroBottom <= 0 ? '#ffffff' : '#FF5101';
-    }, { passive: true });
+    }
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
 
     const sections = document.querySelectorAll('.content-section');
     const tocLinks = document.querySelectorAll('.toc a');
@@ -444,6 +446,31 @@
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
     }, { passive: true });
+    // Lightbox
+    const lightbox = document.createElement('div');
+    lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;cursor:zoom-out;align-items:center;justify-content:center;padding:40px;';
+    const lightboxImg = document.createElement('img');
+    lightboxImg.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;';
+    lightbox.appendChild(lightboxImg);
+    document.body.appendChild(lightbox);
+
+    document.querySelectorAll('.case-content img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
+    });
   </script>
 
   <!-- BOTTOM NAV -->

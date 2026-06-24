@@ -19,7 +19,7 @@
 
     /* ─── HERO BANNER ─── */
     .header {
-      background: #7B34CF !important;
+      background: #7B34CF;
       transition: none;
       position: sticky;
       top: 0;
@@ -369,19 +369,19 @@
           </div>
           <div class="meta-row">
             <div class="meta-label">Objective</div>
-            <div class="meta-value">Lower the barrier to building chatbot automations by replacing the manual visual Flowbuilder with a text-based AI assistant — Manychat's first AI feature</div>
+            <div class="meta-value">Lower the barrier to building chatbot automations with a text-based AI assistant — Manychat's first AI feature.</div>
           </div>
           <div class="meta-row">
             <div class="meta-label">Target Audience</div>
-            <div class="meta-value">TBD <em>(после Discovery сузилось до: новые пользователи без опыта работы с Flowbuilder — стоит явно прописать здесь, а не только в середине кейса)</em></div>
+            <div class="meta-value">Manychat users building chatbot automations — both new and experienced users were considered at the outset</div>
           </div>
           <div class="meta-row">
             <div class="meta-label">Team</div>
-            <div class="meta-value">PO, Senior Product Designer, Lead Backend Engineer, Frontend Engineer, Data Analyst</div>
+            <div class="meta-value">PO, Product Designer, Lead Backend Engineer, Frontend Engineer, Data Analyst</div>
           </div>
           <div class="meta-row">
             <div class="meta-label">My role</div>
-            <div class="meta-value">Concept, UX/UI, Copywriting, User Interviews</div>
+            <div class="meta-value">Concept, UX/UI, Copywriting, User Research & Interviews, Funnel Analysis</div>
           </div>
 
         </div>
@@ -389,7 +389,7 @@
 
       <div class="content-section" id="problem">
         <h2 class="section-heading">Problem</h2>
-        <p class="content-text">Building even a simple automation in Manychat's visual Flowbuilder requires understanding triggers, conditions, and step logic. For new users, that's a real barrier between signing up and getting value. TBD: <em>% новых юзеров без published flow в первую неделю.</em></p>
+        <p class="content-text">Building even a simple automation in Manychat's visual Flowbuilder requires understanding triggers, conditions, and step logic. For new users, that's a real barrier between signing up and getting value.</p>
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
@@ -413,8 +413,8 @@
         <p class="content-text" style="font-weight:600; color:#0a0a0a;">From a text prompt to a working flow</p>
         <p class="content-text">Vision-led, not data-led — speed mattered more than certainty at this stage.</p>
         <p class="content-text"><strong>User side:</strong> describe your business and use case → AI generates the flow.<br><strong>Under the hood:</strong> prompt = business context + Flowbuilder's JSON logic, so output maps to real flow steps.</p>
+        <img src="src/2. MCai/5.png" style="width:100%;display:block;margin:32px 0;" alt="" />
         <p class="content-text"><strong>Design decision:</strong> open text over a structured form, to match "just describe what you want" and skip Flowbuilder terminology. Trade-off we hadn't tested: freedom assumes the user already knows what to ask for.</p>
-        <div class="image-placeholder">Image placeholder</div>
       </div>
 
       <div class="content-section" id="validation">
@@ -422,24 +422,10 @@
         <p class="content-text">Testing the open-prompt hypothesis.</p>
         <p class="content-text"><strong>Demo (15+ users)</strong><br>I recruited users from the AI audience to test stability and surface first reactions. Confirmed the lack-of-value signal for experienced users; surfaced a missing feature — context continuity across prompts — which we shipped.</p>
         <p class="content-text"><strong>Alpha (1,300+ users, 1 month)</strong><br>I tracked the funnel in production to find where users dropped off. Biggest drop-offs: before writing a prompt, and before applying the flow.</p>
-        <table class="funnel-table">
-          <thead>
-            <tr><th>Step</th><th>Users</th><th>Conversion</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Modal click</td><td>1,330</td><td>100%</td></tr>
-            <tr><td>Prompt entered</td><td>689</td><td>51.8%</td></tr>
-            <tr><td>LLM response</td><td>599</td><td>86.9%</td></tr>
-            <tr><td>Flow applied</td><td>258</td><td>40.5%</td></tr>
-            <tr><td>Flow published</td><td>218</td><td>84.5%</td></tr>
-            <tr><td>5+ contacts reached</td><td>79</td><td>36.2%</td></tr>
-          </tbody>
-        </table>
+        <img src="src/2. MCai/7.png" style="width:100%;display:block;margin:32px 0;" alt="" />
         <p class="content-text"><strong>Qualitative (10 interviews, abandoned vs. successful)</strong><br>I designed the study, recruited both segments via Intercom, wrote two interview scripts, conducted all interviews, and synthesized findings for stakeholders.</p>
-        <p class="content-text"><em>"It's hard for me to describe the flow I want."</em> — abandoned user</p>
-        <p class="content-text"><em>"I was trying to get a trigger on customer response and send it to a webhook, but it created something else."</em> — successful user</p>
+        <img src="src/2. MCai/9.png" style="width:100%;display:block;margin:32px 0;" alt="" />
         <p class="content-text"><strong>Conclusion:</strong> abandoned = newcomers lacking the vocabulary to prompt well. Successful = power users who wanted more capability, not less complexity. Hypothesis #2 was disproved. Hypothesis #1 held.</p>
-        <div class="image-placeholder">Image placeholder</div>
       </div>
 
       <div class="content-section" id="design-v2">
@@ -452,14 +438,15 @@
         <div class="image-placeholder">Image placeholder</div>
       </div>
 
+      <img src="src/2. MCai/11.png" style="width:100%;display:block;margin:0 0 64px;" alt="AI Assistant initial design" />
+
       <div class="content-section" id="result">
         <h2 class="section-heading">Result</h2>
         <ul class="content-text" style="padding-left:20px;">
           <li><strong>36% conversion</strong> to publishing an AI flow (new users)</li>
           <li><strong>20% retention</strong></li>
         </ul>
-        <p class="content-text">TBD: <em>точка сравнения (конверсия через обычный Flowbuilder или v1.0) — без неё цифры сложно оценить.</em></p>
-        <p class="content-text">More than the numbers: two iterations gave us a validated answer to <em>who this is for and what they need</em> — guardrails, not freedom. That became the foundation for every AI feature decision that followed.</p>
+<p class="content-text">More than the numbers: two iterations gave us a validated answer to <em>who this is for and what they need</em> — guardrails, not freedom. That became the foundation for every AI feature decision that followed.</p>
       </div>
 
     </div>
@@ -485,7 +472,7 @@
     const header = document.querySelector('.header');
     const hero = document.querySelector('.case-hero');
 
-    window.addEventListener('scroll', () => {
+    function updateHeader() {
       const heroBottom = hero.getBoundingClientRect().bottom;
       if (heroBottom <= 0) {
         header.style.background = '#ffffff';
@@ -494,7 +481,9 @@
         header.style.background = '#7B34CF';
         header.querySelectorAll('.btn').forEach(b => b.style.color = '#ffffff');
       }
-    }, { passive: true });
+    }
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
 
     const sections = document.querySelectorAll('.content-section');
     const tocLinks = document.querySelectorAll('.toc a');
@@ -509,6 +498,32 @@
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
     }, { passive: true });
+
+    // Lightbox
+    const lightbox = document.createElement('div');
+    lightbox.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;cursor:zoom-out;align-items:center;justify-content:center;padding:40px;';
+    const lightboxImg = document.createElement('img');
+    lightboxImg.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;';
+    lightbox.appendChild(lightboxImg);
+    document.body.appendChild(lightbox);
+
+    document.querySelectorAll('.case-content img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { lightbox.style.display = 'none'; document.body.style.overflow = ''; }
+    });
   </script>
 
   <!-- BOTTOM NAV -->
